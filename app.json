@@ -1,0 +1,9 @@
+{
+  "name": "HaloFoto",
+  "displayName": "halofoto",
+  "ios": {
+    "usesIcloudStorage": true,
+    "bundleIdentifier": "com.halofoto.halofotoLive"
+  },
+  "plugins": ["expo-document-picker"]
+}
