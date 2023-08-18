@@ -18,6 +18,7 @@ import MyProductNoList from "./MyProductNoList";
 import ProductList from "./ProductList";
 import styles from "./style";
 import VideoModal from "../../Helper/Modal/VideoModal";
+import LinearGradient from 'react-native-linear-gradient';
 
 const MyProduct = ({
   data,
@@ -60,11 +61,12 @@ const MyProduct = ({
           showModal={videoModal}
         />
       )}
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <View style={styles.topHeader}>
             <Pressable
@@ -148,7 +150,8 @@ const MyProduct = ({
             <MyProductNoList onPressRegister={onPressRegister} />
           )}
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </>
   );
 };

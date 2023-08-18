@@ -79,6 +79,7 @@ const OtpVerification = () => {
       otpVerification(enteredPin)(otpVerificationDispatch)(response => {
         //console.log('resssssssssss', response)
         if (response.status == 1) {
+          pin1.current.focus()
           setDelay(true)
           navigate(CHECK_REFERRAL_GENERAL_USER, {
             userType: 'general'

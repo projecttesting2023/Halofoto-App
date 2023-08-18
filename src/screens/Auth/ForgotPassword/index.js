@@ -17,6 +17,7 @@ import Submit from "../../Helper/Button/Submit"
 import CountryExtCodeModal from "../../Helper/Modal/CountryExtCodeModal"
 import styles from "./style"
 import NavigationHeader from "../../Helper/NavigationHeader"
+import LinearGradient from 'react-native-linear-gradient';
 
 
 export default function ForgotPassword({
@@ -32,11 +33,12 @@ export default function ForgotPassword({
 }) {
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView style={styles.containerWrap}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -109,7 +111,8 @@ export default function ForgotPassword({
             </ScrollView>
           </KeyboardAvoidingView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   )
 }

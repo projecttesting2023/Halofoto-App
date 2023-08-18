@@ -6,6 +6,7 @@ import {
   Pressable,
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import LinearGradient from 'react-native-linear-gradient';
 import AppSettings from "../../../global/AppSettings"
 import StaticText from "../../../global/StaticText"
 import BackBtn from "../../../screens/Helper/SvgImg/BackBtn"
@@ -22,11 +23,12 @@ export default function Follow({
 }) {
   return (
     <>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+   <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <View style={styles.topHeader}>
             <Pressable
@@ -48,7 +50,8 @@ export default function Follow({
             </View>
           </ScrollView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </>
   );
 }

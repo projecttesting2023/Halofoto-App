@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
 } from "react-native";
 
+import { LinearGradient } from "expo-linear-gradient";
 import AppSettings from "../../../../global/AppSettings";
 import StaticText from "../../../../global/StaticText";
 import BannerCard from "../BannerCard";
@@ -92,11 +93,12 @@ const ReviewList = ({
 
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
         <AnimatedHeader
           label={StaticText.screen.review.heading}
@@ -143,7 +145,8 @@ const ReviewList = ({
           )}
         </View>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   );
 };

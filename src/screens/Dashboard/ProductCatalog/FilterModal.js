@@ -9,6 +9,7 @@ import {
   ScrollView,
   useColorScheme
 } from "react-native"
+import LinearGradient from 'react-native-linear-gradient';
 import styles from "./filterModalStyle"
 import StaticText from "../../../global/StaticText"
 import RoundedCornerGradientStyleBlue from "../../Helper/Button/RoundedCornerGradientStyleBlue"
@@ -105,10 +106,11 @@ const FilterModal = ({
 
           <ScrollView>
             <View style={[styles.modalWrap]}>
-              <ImageBackground source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image}>
+              {/* <ImageBackground source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image}> */}
+              <LinearGradient colors={isDarkTheme ? ['#000000', '#000000', '#000000', '#000000'] : ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']} >
                 <SafeAreaView style={styles.container}>
                   <View style={[styles.headerContent]}>
-                    <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>{StaticText.modal.product_type.filter}</Text>
+                    <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.product_type.filter}</Text>
                     <Pressable onPress={() => showModalView(!modalView)}>
                       <CloseIcon />
                     </Pressable>
@@ -120,7 +122,7 @@ const FilterModal = ({
                       {filterData?.camera_types &&
                         filterData?.camera_types?.length > 0 && (
                           <View style={styles.mountTypedWrap}>
-                            <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>{StaticText.modal.product_type.camera_type}</Text>
+                            <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.product_type.camera_type}</Text>
                             <View style={styles.cardWrap}>
                               {filterData?.camera_types?.map((data) => (
                                 <View
@@ -135,7 +137,7 @@ const FilterModal = ({
                                     style={[
                                       styles.genderCard,
                                       selectedCameraType.indexOf(data?.id) >=
-                                        0 && styles.genderCardActive,
+                                      0 && styles.genderCardActive,
                                     ]}
                                     onPress={() => {
                                       if (
@@ -167,10 +169,10 @@ const FilterModal = ({
                                   </Pressable>
                                   {selectedCameraType.indexOf(data?.id) >=
                                     0 && (
-                                    <View style={styles.iconWrap}>
-                                      <TickSmall />
-                                    </View>
-                                  )}
+                                      <View style={styles.iconWrap}>
+                                        <TickSmall />
+                                      </View>
+                                    )}
                                 </View>
                               ))}
                             </View>
@@ -181,10 +183,10 @@ const FilterModal = ({
                         <>
                           <View style={styles.mountTypedWrap}>
                             <View style={styles.headerWrap}>
-                              <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>{StaticText.modal.product_type.mount}</Text>
+                              <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.product_type.mount}</Text>
                               <Pressable onPress={() => selectAllMountData()}>
                                 <Text style={styles.selectText}>
-                                {StaticText.modal.product_type.select_all}
+                                  {StaticText.modal.product_type.select_all}
                                 </Text>
                               </Pressable>
                             </View>
@@ -213,11 +215,11 @@ const FilterModal = ({
                                 key={`mount-type-${Math.random()}`}
                               >
                                 {selectedMountType.indexOf(data?.id) >= 0 ? (
-                                  <CheckBoxTick color={isDarkTheme ? Colors.white:  Colors.black} />
+                                  <CheckBoxTick color={isDarkTheme ? Colors.white : Colors.black} />
                                 ) : (
-                                  <CheckBox color={isDarkTheme ? Colors.white:  Colors.black} />
+                                  <CheckBox color={isDarkTheme ? Colors.white : Colors.black} />
                                 )}
-                                <Text style={[styles.textCategory,{color: isDarkTheme ? Colors.white:  Colors.black }]}>
+                                <Text style={[styles.textCategory, { color: isDarkTheme ? Colors.white : Colors.black }]}>
                                   {data?.name}
                                 </Text>
                               </Pressable>
@@ -231,12 +233,12 @@ const FilterModal = ({
                           <>
                             <View style={styles.mountTypedWrap}>
                               <View style={styles.headerWrap}>
-                                <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>
-                                {StaticText.modal.product_type.lense_category}
+                                <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>
+                                  {StaticText.modal.product_type.lense_category}
                                 </Text>
                                 <Pressable onPress={() => selectAllLenseData()}>
                                   <Text style={styles.selectText}>
-                                  {StaticText.modal.product_type.select_all}
+                                    {StaticText.modal.product_type.select_all}
                                   </Text>
                                 </Pressable>
                               </View>
@@ -273,12 +275,12 @@ const FilterModal = ({
                                   key={`mount-type-${Math.random()}`}
                                 >
                                   {selectedLenseCategory.indexOf(data?.id) >=
-                                  0 ? (
-                                    <CheckBoxTick color={isDarkTheme ? Colors.white : Colors.black}  />
+                                    0 ? (
+                                    <CheckBoxTick color={isDarkTheme ? Colors.white : Colors.black} />
                                   ) : (
                                     <CheckBox color={isDarkTheme ? Colors.white : Colors.black} />
                                   )}
-                                  <Text style={[styles.textCategory, isDarkTheme ? { color: Colors.white } :{ color: Colors.black }]}>
+                                  <Text style={[styles.textCategory, isDarkTheme ? { color: Colors.white } : { color: Colors.black }]}>
                                     {data?.name}
                                   </Text>
                                 </Pressable>
@@ -290,8 +292,8 @@ const FilterModal = ({
                       {filterData?.message_categories &&
                         filterData?.message_categories?.length > 0 && (
                           <View style={styles.mountTypedWrap}>
-                            <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>
-                            {StaticText.modal.message_list.category}
+                            <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>
+                              {StaticText.modal.message_list.category}
                             </Text>
                             <View style={styles.cardWrap}>
                               {filterData?.message_categories?.map((data) => (
@@ -307,7 +309,7 @@ const FilterModal = ({
                                     style={[
                                       styles.genderCard,
                                       selectedMessageType.indexOf(data?.id) >=
-                                        0 && styles.genderCardActive,
+                                      0 && styles.genderCardActive,
                                     ]}
                                     onPress={() => {
                                       if (
@@ -343,10 +345,10 @@ const FilterModal = ({
                                   </Pressable>
                                   {selectedMessageType.indexOf(data?.id) >=
                                     0 && (
-                                    <View style={styles.iconWrap}>
-                                      <TickSmall />
-                                    </View>
-                                  )}
+                                      <View style={styles.iconWrap}>
+                                        <TickSmall />
+                                      </View>
+                                    )}
                                 </View>
                               ))}
                             </View>
@@ -356,12 +358,12 @@ const FilterModal = ({
                       {filterData?.message_categories &&
                         filterData?.message_categories?.length > 0 && (
                           <View style={styles.mountTypedWrap}>
-                            <Text style={[styles.headerText,{color: isDarkTheme ? Colors.white:  Colors.black }]}>{StaticText.modal.message_list.date}</Text>
+                            <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.message_list.date}</Text>
                             <View style={styles.cardWrap}>
                               <Pressable
                                 style={
                                   selectedDays == 30
-                                    ?[styles.genderCardButton,styles.genderCardActive]
+                                    ? [styles.genderCardButton, styles.genderCardActive]
                                     : styles.genderCardButton
                                 }
                                 onPress={() => {
@@ -369,21 +371,21 @@ const FilterModal = ({
                                 }}
                               >
                                 <Text style={[styles.cardText]}>
-                                {StaticText.modal.message_list.day_filter1}
+                                  {StaticText.modal.message_list.day_filter1}
                                 </Text>
                               </Pressable>
                               <Pressable
-                               style={
-                                selectedDays == 10
-                                  ?[styles.genderCardButton,styles.genderCardActive]
-                                  : styles.genderCardButton
-                              }
+                                style={
+                                  selectedDays == 10
+                                    ? [styles.genderCardButton, styles.genderCardActive]
+                                    : styles.genderCardButton
+                                }
                                 onPress={() => {
                                   setSelectedDays(10)
                                 }}
                               >
                                 <Text style={[styles.cardText]}>
-                                {StaticText.modal.message_list.day_filter2}
+                                  {StaticText.modal.message_list.day_filter2}
                                 </Text>
                               </Pressable>
                             </View>
@@ -403,7 +405,8 @@ const FilterModal = ({
                     </>
                   )}
                 </SafeAreaView>
-              </ImageBackground>
+              </LinearGradient>
+              {/* </ImageBackground> */}
             </View>
           </ScrollView>
         </Modal>

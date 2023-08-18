@@ -6,6 +6,7 @@ import StaticText from '../../../global/StaticText'
 import styles from './SoftwareLicenseStyle'
 import BackBtn from '../../Helper/SvgImg/BackBtn'
 import { SETTINGS } from '../../../constants/RouteNames'
+import LinearGradient from 'react-native-linear-gradient';
 
 
 const SoftwareLicense = ({
@@ -17,7 +18,8 @@ const SoftwareLicense = ({
 
     return (
         <Container style={styles.container}>
-            <ImageBackground resizeMode="cover" style={styles.overlayWrap} source={AppSettings.background_inner_image}>
+            {/* <ImageBackground resizeMode="cover" style={styles.overlayWrap} source={AppSettings.background_inner_image}> */}
+            <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                 <SafeAreaView style={styles.containerWrap}>
                     <View style={styles.topHeader}>
                         <Pressable
@@ -234,7 +236,8 @@ const SoftwareLicense = ({
                         </Text>
                     </ScrollView>
                 </SafeAreaView>
-            </ImageBackground>
+                </LinearGradient>
+            {/* </ImageBackground> */}
         </Container >
     )
 }

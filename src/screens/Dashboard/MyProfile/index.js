@@ -42,11 +42,12 @@ const MyProfile = ({
 
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <View style={styles.topHeader}>
             <View style={styles.titleHolder}>
@@ -242,7 +243,9 @@ const MyProfile = ({
             )}
           </ScrollView>
         </SafeAreaView>
-      </ImageBackground>
+      </LinearGradient>
+
+      {/* </ImageBackground> */}
     </View>
   );
 };

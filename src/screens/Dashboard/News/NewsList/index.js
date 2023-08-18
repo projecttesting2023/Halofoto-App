@@ -15,6 +15,7 @@ import AnimatedHeader from "../../../Helper/AnimatedHeader";
 import StaticText from "../../../../global/StaticText";
 import styles from "./style";
 import NoContentPage from "../../../Common/NoContentPage";
+import LinearGradient from "react-native-linear-gradient";
 
 const NewsList = ({
   newsData,
@@ -107,11 +108,12 @@ const NewsList = ({
   return (
     <View style={styles.container}>
       
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <AnimatedHeader
           label={StaticText.screen.news.heading}
           mainWrapperStyle={styles.topHeader}
@@ -158,7 +160,8 @@ const NewsList = ({
               </>
             )}
         </View>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   );
 };

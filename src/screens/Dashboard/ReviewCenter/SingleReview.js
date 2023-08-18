@@ -19,6 +19,7 @@ import styles from "./singleReviewstyle"
 import Colors from "../../../global/Colors"
 import InformationBlue from "../../Helper/SvgImg/InformationBlue"
 import { MY_PRODUCT_DETAILS } from "../../../constants/RouteNames"
+import LinearGradient from 'react-native-linear-gradient';
 
 const ReviewDetails = ({
     data,
@@ -42,11 +43,12 @@ const ReviewDetails = ({
 
     return (
         <View style={styles.container}>
-            <ImageBackground
+            {/* <ImageBackground
                 resizeMode="cover"
                 style={styles.overlayWrap}
                 source={AppSettings.background_inner_image}
-            >
+            > */}
+            <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                 <SafeAreaView>
                     <View style={styles.topHeader}>
                         <Pressable
@@ -100,7 +102,8 @@ const ReviewDetails = ({
                         )}
                     </View>
                 </SafeAreaView>
-            </ImageBackground>
+                </LinearGradient>
+            {/* </ImageBackground> */}
         </View>
     )
 }

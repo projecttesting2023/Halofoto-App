@@ -13,6 +13,7 @@ import Container from "../../Helper/Container"
 import AppSettings from "../../../global/AppSettings"
 import StaticText from "../../../global/StaticText"
 import styles from "./style"
+import LinearGradient from 'react-native-linear-gradient';
 
 import { DASHBOARD, LOGIN, SOFTWARE_LICENSE } from "../../../constants/RouteNames"
 import BackBtn from "../../Helper/SvgImg/BackBtn"
@@ -34,11 +35,12 @@ const Settings = ({
 
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <View style={styles.topHeader}>
             <Pressable
@@ -106,7 +108,8 @@ const Settings = ({
             }
           </ScrollView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   )
 }

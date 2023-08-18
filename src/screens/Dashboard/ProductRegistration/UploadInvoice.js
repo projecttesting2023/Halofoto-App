@@ -42,11 +42,12 @@ const UploadInvoice = ({
 }) => {
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={[styles.overlayWrap, styles.pageLoader]}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <NavigationHeader
             previousBtnOnpress={() => onPress()}
@@ -159,7 +160,8 @@ const UploadInvoice = ({
             />
           </View>
         )}
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   );
 };

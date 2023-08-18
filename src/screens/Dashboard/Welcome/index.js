@@ -10,11 +10,12 @@ const Welcome = ({onPress, showLoader}) => {
   
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <View style={styles.contentWrap}>
           <Tick />
           <View style={styles.textContentWrap}>
@@ -34,8 +35,8 @@ const Welcome = ({onPress, showLoader}) => {
           />
         </View>
 
-       
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   );
 };

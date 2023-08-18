@@ -17,6 +17,7 @@ import BackBtn from "../../../screens/Helper/SvgImg/BackBtn"
 import styles from "./singleProductStyle"
 import { MY_PRODUCT_LIST } from "../../../constants/RouteNames"
 
+
 import moment from "moment"
 import Colors from "../../../global/Colors"
 import NavTextButtons from "./NavTextButtons"
@@ -42,11 +43,12 @@ const SingleProduct = ({
 
     return (
         <View style={styles.container}>
-            <ImageBackground
+            {/* <ImageBackground
                 resizeMode="cover"
                 style={styles.overlayWrap}
                 source={AppSettings.background_inner_image_dark}
-            >
+            > */}
+            <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                 <SafeAreaView>
                     <View style={styles.topHeader}>
                         <Pressable
@@ -389,7 +391,8 @@ const SingleProduct = ({
                         </View>
                     </ScrollView>
                 </SafeAreaView>
-            </ImageBackground>
+                </LinearGradient>
+            {/* </ImageBackground> */}
         </View>
     )
 }

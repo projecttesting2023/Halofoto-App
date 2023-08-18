@@ -20,6 +20,7 @@ import StaticText from "../../../global/StaticText"
 import ListItem from "./ListItem"
 import NoContentPage from "../../Common/NoContentPage";
 import styles from "./style"
+import LinearGradient from "react-native-linear-gradient"
 
 
 const ProductCatalog = ({
@@ -88,11 +89,12 @@ const ProductCatalog = ({
 
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
           <AnimatedHeader
             label={StaticText.screen.product_catelog.heading}
             mainWrapperStyle={styles.topHeader}
@@ -138,8 +140,8 @@ const ProductCatalog = ({
                 </>
               }
           </View>
-       
-      </ImageBackground>
+          </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   )
 }

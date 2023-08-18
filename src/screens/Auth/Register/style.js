@@ -94,7 +94,7 @@ export default StyleSheet.create({
   },
   genderDobWrap: {
     display: "flex",
-    flexDirection: "row"
+    flexDirection: "row",
   },
 
   inputContainer: {
@@ -313,12 +313,12 @@ export default StyleSheet.create({
     flex: 1,
   },
 
-  input: {
-    marginRight: 10,
-    fontSize: 20,
-    color: Colors.white,
-    flex: 1,
-  },
+  // input: {
+  //   marginRight: 10,
+  //   fontSize: 20,
+  //   color: Colors.white,
+  //   flex: 1,
+  // },
 
   inputCountry: {
     paddingTop: 0,

@@ -10,6 +10,7 @@ import {
 } from "react-native"
 import { ScrollView } from "react-native-gesture-handler"
 import { LinearGradient } from "expo-linear-gradient"
+
 import RenderHtml from 'react-native-render-html'
 import IframeRenderer, { iframeModel } from '@native-html/iframe-plugin';
 import WebView from 'react-native-webview';
@@ -68,11 +69,12 @@ const StoryDetails = ({
         />
       )}
       <View style={styles.container}>
-        <ImageBackground
+        {/* <ImageBackground
           resizeMode="cover"
           style={styles.overlayWrap}
           source={AppSettings.background_inner_image_dark}
-        >
+        > */}
+         <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
           <SafeAreaView>
             <AnimatedHeader
               label={StaticText.screen.story_details.heading}
@@ -189,7 +191,8 @@ const StoryDetails = ({
               </View>
             </ScrollView>
           </SafeAreaView>
-        </ImageBackground>
+          </LinearGradient>
+        {/* </ImageBackground> */}
       </View>
     </>
   )

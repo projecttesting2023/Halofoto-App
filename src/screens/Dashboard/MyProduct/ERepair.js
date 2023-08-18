@@ -14,6 +14,7 @@ import StaticText from "../../../global/StaticText";
 import styles from "./eRepairStyle";
 import RoundedCornerGradientStyleBlueFullWidth from "../../Helper/Button/RoundedCornerGradientStyleBlueFullWidth";
 import AnimatedHeader from "../../Helper/AnimatedHeader";
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function ERepair({
   onPress,
@@ -26,11 +27,12 @@ export default function ERepair({
 }) {
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+        <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
         <AnimatedHeader
           label={StaticText.screen.my_product_list.content.e_repair}
@@ -83,7 +85,8 @@ export default function ERepair({
           </View>
         </ScrollView>
         </SafeAreaView>
-      </ImageBackground>
+      {/* </ImageBackground> */}
+      </LinearGradient>
     </Container>
   );
 }

@@ -16,7 +16,7 @@ import AnimatedHeader from "../../../Helper/AnimatedHeader";
 import StaticText from "../../../../global/StaticText";
 import styles from "./style";
 import NoContentPage from "../../../Common/NoContentPage";
-
+import LinearGradient from 'react-native-linear-gradient';
 
 const StoryList = ({
   storyListData,
@@ -65,11 +65,12 @@ const StoryList = ({
 
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+        <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
           <AnimatedHeader
             label={StaticText.screen.story_list.nav_heading}
@@ -119,7 +120,8 @@ const StoryList = ({
             )}
           </View>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   );
 };

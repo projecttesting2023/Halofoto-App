@@ -9,6 +9,7 @@ import {
   Animated,
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
+import LinearGradient from 'react-native-linear-gradient';
 import { LOGIN } from "../../../constants/RouteNames"
 import Container from "../../Helper/Container"
 import AppSettings from "../../../global/AppSettings"
@@ -51,11 +52,12 @@ export default function Register({
 
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView style={styles.containerWrap}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -330,7 +332,8 @@ export default function Register({
             </ScrollView>
           </KeyboardAvoidingView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   )
 }

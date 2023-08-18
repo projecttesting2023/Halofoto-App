@@ -15,6 +15,7 @@ import {
   SafeAreaView,
   useSafeAreaInsets,
 } from "react-native-safe-area-context"
+import LinearGradient from 'react-native-linear-gradient';
 import CloseIcon from "../../SvgImg/CloseIcon"
 import StaticText from "../../../../global/StaticText"
 import AppSettings from "../../../../global/AppSettings"
@@ -131,8 +132,9 @@ const CountryExtCodeModal = ({
           onRequestClose={() => showModalView(!modalView)}
         >
           <View style={[styles.modalWrap]}>
-            <ImageBackground
-              source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image} style={styles.modalBgWrap}>
+            {/* <ImageBackground
+              source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image} style={styles.modalBgWrap}> */}
+               <LinearGradient colors={isDarkTheme?['#000000', '#000000', '#000000', '#000000']:['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']} style={styles.modalBgWrap}>
               <SafeAreaView style={[styles.containerWrap]}>
                 <View style={[styles.headerContent, { marginTop: insets.top }]}>
                   {heading ? (
@@ -178,7 +180,8 @@ const CountryExtCodeModal = ({
                   )}
                 </View>
               </SafeAreaView>
-            </ImageBackground>
+              </LinearGradient>
+            {/* </ImageBackground> */}
           </View>
         </Modal>
       )}

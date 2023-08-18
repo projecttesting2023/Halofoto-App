@@ -12,6 +12,7 @@ import StaticText from '../../../global/StaticText'
 import styles from './RegisterWarrantyStyle'
 import ModelNumberModal from '../../Helper/Modal/ModelNumberModal'
 import InformationWhite from '../../Helper/SvgImg/InformationWhite'
+import LinearGradient from 'react-native-linear-gradient'
 
 const RegisterWarranty = ({
     data,
@@ -28,11 +29,12 @@ const RegisterWarranty = ({
 }) => {
     return (
         <Container style={styles.container}>
-            <ImageBackground
+            {/* <ImageBackground
                 resizeMode="cover"
                 style={[styles.overlayWrap]}
                 source={AppSettings.background_inner_image}
-            >
+            > */}
+            <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                 <SafeAreaView style={styles.mainWrap}>
                     <NavigationHeader
                         previousBtnOnpress={() => onPress()}
@@ -146,7 +148,8 @@ const RegisterWarranty = ({
                         <ActivityIndicator size="large" color={AppSettings.activity_indicator_color} />
                     </View>
                 }
-            </ImageBackground>
+                </LinearGradient>
+            {/* </ImageBackground> */}
         </Container>
     )
 }

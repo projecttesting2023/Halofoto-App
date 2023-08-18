@@ -39,11 +39,12 @@ const ProductDetails = ({
         <>
             {videoModal && <VideoModal videoProp={videoProp} showVideoModal={showVideoModal} showModal={videoModal} />}
             <View style={styles.container}>
-                <ImageBackground
+                {/* <ImageBackground
                     resizeMode="cover"
                     style={styles.overlayWrap}
                     source={AppSettings.background_inner_image_dark}
-                >
+                > */}
+                <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                         <View style={styles.topHeader}>
                             <Pressable
                                 style={styles.titleHolder}
@@ -283,7 +284,8 @@ const ProductDetails = ({
                                     </>)}
                             </View>
                         </ScrollView>
-                </ImageBackground>
+                        </LinearGradient>
+                {/* </ImageBackground> */}
             </View>
         </>
     )

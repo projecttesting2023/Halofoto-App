@@ -11,16 +11,18 @@ import StaticText from "../../../global/StaticText"
 import BackBtn from "../../Helper/SvgImg/BackBtn"
 import styles from "./SettingsWebFrameStyle"
 import { SETTINGS_WEBVIEW_MAIN } from "../../../constants/RouteNames"
+import LinearGradient from 'react-native-linear-gradient';
 
 const SettingsWebFrame = ({ onPress, uri }) => {
    
   return (
     <View style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image_dark}
-      >
+      > */}
+       <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <View style={styles.topHeader}>
           <Pressable style={styles.titleHolder} onPress={() => onPress(SETTINGS_WEBVIEW_MAIN)}>
             <View style={styles.backWrap}>
@@ -39,7 +41,8 @@ const SettingsWebFrame = ({ onPress, uri }) => {
           </Pressable>
         </View>
         {uri?.length > 0 && <WebView source={{ uri }} />}
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </View>
   )
 }

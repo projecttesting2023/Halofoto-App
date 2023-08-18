@@ -16,6 +16,7 @@ import LockBG from "../../Helper/SvgImg/LockBG";
 import EditIcon from "../../Helper/SvgImg/EditIcon";
 import RoundedCornerGradientStyleBlueFullWidth from "../../Helper/Button/RoundedCornerGradientStyleBlueFullWidth";
 import NoContentIcon from "../../Helper/SvgImg/NoContent";
+import LinearGradient from 'react-native-linear-gradient';
 
 export default function NoContentPage({
   onPress,
@@ -23,11 +24,13 @@ export default function NoContentPage({
 
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
+      
         <SafeAreaView style={styles.containerWrap}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -53,7 +56,8 @@ export default function NoContentPage({
             </ScrollView>
           </KeyboardAvoidingView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   );
 }

@@ -9,7 +9,7 @@ import {
   useColorScheme
 } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
-
+import LinearGradient from 'react-native-linear-gradient';
 import AppSettings from "../../../global/AppSettings"
 import StaticText from "../../../global/StaticText"
 import Input from "../../Helper/Form/Input"
@@ -36,11 +36,12 @@ export default function CheckReferrer({
   const isDarkTheme = theme === 'dark'
 
   return (
-    <ImageBackground
-      resizeMode="cover"
-      style={styles.overlayWrap}
-      source={AppSettings.background_inner_image}
-    >
+    // <ImageBackground
+    //   resizeMode="cover"
+    //   style={styles.overlayWrap}
+    //   source={AppSettings.background_inner_image}
+    // >
+    <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
       <View style={styles.modalWrap}>
         <ImageBackground
           source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image}
@@ -110,6 +111,7 @@ export default function CheckReferrer({
           </SafeAreaView>
         </ImageBackground>
       </View>
-    </ImageBackground>
+      </LinearGradient>
+    // </ImageBackground>
   );
 }

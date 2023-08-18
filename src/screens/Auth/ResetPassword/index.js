@@ -15,6 +15,7 @@ import Input from "../../Helper/Form/Input"
 import Submit from "../../Helper/Button/Submit"
 import styles from "./style"
 import NavigationHeader from "../../Helper/NavigationHeader"
+import LinearGradient from 'react-native-linear-gradient';
 
 
 export default function ResetPassword({
@@ -31,11 +32,12 @@ export default function ResetPassword({
   
   return (
     <Container style={styles.container}>
-      <ImageBackground
+      {/* <ImageBackground
         resizeMode="cover"
         style={styles.overlayWrap}
         source={AppSettings.background_inner_image}
-      >
+      > */}
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView style={styles.containerWrap}>
           <KeyboardAvoidingView
             behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -101,7 +103,8 @@ export default function ResetPassword({
             </ScrollView>
           </KeyboardAvoidingView>
         </SafeAreaView>
-      </ImageBackground>
+        </LinearGradient>
+      {/* </ImageBackground> */}
     </Container>
   )
 }

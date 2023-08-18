@@ -41,22 +41,24 @@ const Home = ({
 
   return (
     
-    <ImageBackground
-      resizeMode="cover"
-      style={styles.overlayWrap}
-      source={AppSettings.background_inner_image}
-    >
+    // <ImageBackground
+    //   resizeMode="cover"
+    //   style={styles.overlayWrap}
+    //   source={AppSettings.background_inner_image}
+    // >
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
       
       <DashboardHeader profileData={{
         profile_status: profileLoading,
         profile_info: profileData,
       }} onPress={onPress} />
       <View style={styles.catalogBanner}>
-        <ImageBackground
+        {/* <ImageBackground
           resizeMode="cover"
           style={styles.overlayWrapBanner}
           source={AppSettings.banner_overlay}
-        >
+        > */}
+         <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrapBanner}>
           {/* <View style={styles.bannerMainWrap}>
                   {!loading && data?.length &&
                     <FlashList
@@ -120,7 +122,8 @@ const Home = ({
               {data.map((item, index) => <View style={[styles.bannerNav, { backgroundColor: index == currentBannerIndex ? Colors.white : 'rgba(255, 255, 255, 0.6)' }]} key={item?.id}></View>)}
             </View>
           </>} */}
-        </ImageBackground>
+          </LinearGradient>
+        {/* </ImageBackground> */}
       </View>
 
       <View style={styles.buttonWrap}>
@@ -136,8 +139,9 @@ const Home = ({
           <DashboardButtons key={item.name} menu={item} onPress={onPress} />
         )}
       </View>
-      
-    </ImageBackground>
+      </LinearGradient>
+    // </ImageBackground>
+    
    
   )
 }

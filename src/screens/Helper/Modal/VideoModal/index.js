@@ -10,6 +10,7 @@ import {
 import { Video } from 'expo-av'
 import { useState } from "react"
 import YoutubePlayer from "react-native-youtube-iframe"
+import LinearGradient from 'react-native-linear-gradient';
 import AppSettings from "../../../../global/AppSettings"
 import CloseIcon from "../../SvgImg/CloseIcon"
 import styles from "./style"
@@ -47,10 +48,11 @@ const VideoModal = ({
                     </View>
                 }
                 
-                <ImageBackground
+                {/* <ImageBackground
                     source={AppSettings.background_image}
                     style={[styles.modalBgWrap, { position: 'absolute', width: '100%', }]}
-                >
+                > */}
+                <LinearGradient colors={['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']} style={[styles.modalBgWrap, { position: 'absolute', width: '100%', }]}>
                     <SafeAreaView style={[styles.containerWrap]}>
                         <View style={[styles.cardWrap]}>
                             {
@@ -80,7 +82,8 @@ const VideoModal = ({
                             }
                         </View>
                     </SafeAreaView>
-                </ImageBackground>
+                    </LinearGradient>
+                {/* </ImageBackground> */}
             </SafeAreaView>
         </Modal >
     )

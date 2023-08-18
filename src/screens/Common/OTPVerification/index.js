@@ -3,6 +3,7 @@ import AppSettings from '../../../global/AppSettings';
 import StaticText from '../../../global/StaticText';
 import styles from './style'
 import Colors from '../../../global/Colors';
+import LinearGradient from 'react-native-linear-gradient';
 
 const OtpVerification = ({
   pin,
@@ -21,7 +22,8 @@ const OtpVerification = ({
   const isDarkTheme = theme === 'dark'
   
   return (
-    <ImageBackground resizeMode="cover" style={styles.overlayWrap} source={AppSettings.background_inner_image}>
+    // <ImageBackground resizeMode="cover" style={styles.overlayWrap} source={AppSettings.background_inner_image}>
+      <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
       <View style={[styles.modalWrap]}>
         <View style={[styles.container]}>
           <View style={[styles.headerContent]}>
@@ -102,7 +104,8 @@ const OtpVerification = ({
           </View>
         </View>
       </View>
-    </ImageBackground >
+      </LinearGradient>
+    // </ImageBackground >
   );
 }
 

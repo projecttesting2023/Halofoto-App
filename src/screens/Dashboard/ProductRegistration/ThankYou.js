@@ -19,11 +19,12 @@ const RegistrationUpdate = ({
 }) => {
     return (
         <View style={styles.container}>
-            <ImageBackground
+            {/* <ImageBackground
                 resizeMode="cover"
                 style={styles.overlayWrap}
                 source={AppSettings.background_inner_image}
-            >
+            > */}
+            <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
                 <View style={styles.contentWrap}>
                     {approvalStatus != 'accept' ?
                         <>
@@ -65,7 +66,8 @@ const RegistrationUpdate = ({
                         label={StaticText.button.ok}
                     />
                 </View>
-            </ImageBackground>
+                </LinearGradient>
+            {/* </ImageBackground> */}
         </View>
     );
 };

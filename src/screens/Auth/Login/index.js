@@ -19,6 +19,8 @@ import LogoInner from "../../Helper/SvgImg/LogoInner";
 import RoundedCornerGradientStyleBlueFullWidth from "../../Helper/Button/RoundedCornerGradientStyleBlueFullWidth";
 import CheckBox from "../../Helper/SvgImg/CheckBox";
 import { SafeAreaView } from "react-native-safe-area-context";
+import LinearGradient from 'react-native-linear-gradient';
+
 
 
 export default function Login({
@@ -34,11 +36,12 @@ export default function Login({
 }) {
   return (
 
-    <ImageBackground
-      resizeMode="cover"
-      style={styles.overlayWrap}
-      source={AppSettings.background_inner_image}
-    >
+    // <ImageBackground
+    //   resizeMode="cover"
+    //   style={styles.overlayWrap}
+    //   source={AppSettings.background_inner_image}
+    // >
+    <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
       <SafeAreaView>
       <ScrollView
         style={styles.scrollWrap}
@@ -132,7 +135,8 @@ export default function Login({
         </View>
       </ScrollView>
       </SafeAreaView>
-     </ImageBackground>
+      </LinearGradient>
+    //  </ImageBackground>
      
   );
 }

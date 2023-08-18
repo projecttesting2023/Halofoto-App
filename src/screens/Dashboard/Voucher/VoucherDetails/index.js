@@ -43,11 +43,12 @@ const SingleRedemption = ({
   return (
     <>
       <View style={styles.container}>
-        <ImageBackground
+        {/* <ImageBackground
           resizeMode="cover"
           style={styles.overlayWrap}
           source={AppSettings.background_inner_image_dark}
-        >
+        > */}
+         <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
           <AnimatedHeader
             label={StaticText.screen.voucher_details.heading}
             mainWrapperStyle={styles.topHeader}
@@ -165,7 +166,8 @@ const SingleRedemption = ({
             )}
           </ScrollView>
           {!loading && <VoucherCodeModal data={data} />}
-        </ImageBackground>
+          </LinearGradient>
+        {/* </ImageBackground> */}
       </View>
     </>
   );
