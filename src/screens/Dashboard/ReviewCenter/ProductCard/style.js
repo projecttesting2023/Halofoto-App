@@ -1,5 +1,6 @@
 import { StatusBar, StyleSheet } from "react-native";
 import Colors from "../../../../global/Colors";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   container: {
@@ -127,13 +128,10 @@ export default StyleSheet.create({
     padding: 0,
     display: "flex",
     flexDirection: "row",
-    marginBottom: 200
+    marginTop:10,
+    marginBottom:responsiveHeight(2),
   },
 
-  hotDealsSingle:{
-  marginTop:10,
-  marginBottom:10,
-  },
   productCard: {
     borderStyle: "solid",
     borderRadius: 20,

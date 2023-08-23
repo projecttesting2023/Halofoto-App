@@ -211,7 +211,7 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   inputSmall:{
-    fontSize: 20,
+    fontSize: 18,
     color: Colors.white,
     flex: 1,
     display: "flex",

@@ -56,8 +56,17 @@ const StoryDetails = ({
   };
 
   const storyDetails = {
-    html: `<div style="color:red;word-wrap:break-word;font-size:16px;font-weight:400;">${data?.story?.description?.length ? data?.story?.description : ``}</div>`
+    html: `<div style="color:white;word-wrap:break-word;font-size:16px;font-weight:400">${data?.story?.description?.length ? data?.story?.description : ``}</div>`
   }
+
+  const tagsStyles = {
+    body: {
+      paddingHorizontal: 10,
+    },
+    p: {
+      marginHorizontal:10
+    }
+  };
 
   return (
     <>
@@ -85,7 +94,7 @@ const StoryDetails = ({
               onPress={onPress}
             />
 
-            <ScrollView style={styles.mainScroll}>
+            <ScrollView style={styles.mainScroll} overScrollMode="never">
               <View style={styles.mainBodyWrap}>
                 {loading ? <ActivityIndicator size="large" color={Colors.royal_blue} /> : data?.story?.id && <>
                   <View style={styles.categoryListBanner}>
@@ -184,6 +193,7 @@ const StoryDetails = ({
                           scalesPageToFit: true,
                         }
                       }}
+                      tagsStyles={tagsStyles}
                     />
                   </View>
                 </>

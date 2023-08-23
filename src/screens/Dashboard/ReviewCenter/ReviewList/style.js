@@ -1,6 +1,7 @@
 import {Dimensions, Platform, StyleSheet } from "react-native";
 import Colors from "../../../../global/Colors";
 import Constants from 'expo-constants'
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const{height,width} = Dimensions.get('window')
 
@@ -12,13 +13,14 @@ export default StyleSheet.create({
     justifyContent: "center",
     paddingLeft: 0,
     paddingRight: 0,
+  
   },
   overlayWrap: {
     backgroundColor: Colors.black,
     width: "100%",
     height:height*1.19,
     display: "flex",
-    paddingBottom:'20%'
+    paddingBottom:responsiveHeight(30)
   },
   topHeader: {
     display: 'flex',
@@ -27,7 +29,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 20,
     paddingRight: 20,
-    height:Constants.statusBarHeight+(Platform.OS === 'ios' ? 130 : 160),
+    height:Constants.statusBarHeight+(Platform.OS === 'ios' ? 130 : 145),
     paddingBottom:Platform.OS === 'ios' ? 0 : 20,
     width:'100%',
   },
@@ -88,7 +90,8 @@ export default StyleSheet.create({
     marginBottom:Platform.OS === 'ios' ? 100 : 100,
     paddingLeft:15,
     paddingRight:15,
-    height:'81%'
+    height:'81%',
+    marginTop:responsiveHeight(2)
   },
   productListVerical: {
     display: "flex",

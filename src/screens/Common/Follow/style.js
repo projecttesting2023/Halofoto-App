@@ -1,5 +1,6 @@
 import { StyleSheet, StatusBar, Dimensions } from "react-native";
 import Colors from "../../../global/Colors";
+import { responsiveFontSize, responsiveWidth } from "react-native-responsive-dimensions";
 
 const {height,width} = Dimensions.get('window')
 
@@ -95,8 +96,8 @@ export default StyleSheet.create({
     lineHeight: 27,
   },
   textTab: {
-    marginLeft: 16,
-    fontSize: 18,
+    marginLeft: responsiveWidth(2),
+    fontSize: responsiveFontSize(2),
     color: Colors.white,
     fontWeight: "600",
     fontFamily: "Montserrat-SemiBold"

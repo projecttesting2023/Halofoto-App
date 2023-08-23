@@ -15,7 +15,7 @@ const ProductCard = ({ item, onPress }) => {
           onPress={() => onPress(REVIEW_CENTER_SINGLE, { warrantyId: item?.id })}
           unstable_pressDelay={100}
         >
-          <View style={[styles.hotDealsSlide, styles.hotDealsSingle]}>
+          <View style={styles.hotDealsSlide}>
             <View style={styles.productCard}>
 
               <View style={styles.productListVerical}>

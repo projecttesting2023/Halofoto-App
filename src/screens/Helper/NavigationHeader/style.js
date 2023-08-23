@@ -1,6 +1,7 @@
 import { Platform, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import Colors from ".././../../global/Colors";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   topHeader: {
@@ -48,7 +49,7 @@ export default StyleSheet.create({
   },
 
   pageHeading: {
-    fontSize: 22,
+    fontSize: responsiveFontSize(2.5),
     fontWeight: "500",
     fontFamily: "Montserrat-Regular",
     color: Colors.white,
@@ -56,7 +57,7 @@ export default StyleSheet.create({
   },
 
   NextText: {
-    fontSize: 18,
+    fontSize: responsiveFontSize(2),
     fontWeight: "600",
     fontFamily: "Montserrat-Regular",
     color: Colors.white,

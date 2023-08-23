@@ -1,6 +1,7 @@
 import { Platform, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import Colors from "../../../global/Colors";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   container: {
@@ -151,7 +152,7 @@ export default StyleSheet.create({
     marginRight: 10,
     backgroundColor: Colors.deep_cove,
     flex: 1,
-    paddingBottom: 25,
+    //paddingBottom: 25,
     borderColor: Colors.torea_bay,
     borderWidth: 1,
     shadowColor: Colors.catalina_blue,
@@ -254,8 +255,10 @@ export default StyleSheet.create({
     marginRight: 15,
   },
   priceWrap: {
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
     alignItems: "flex-end",
+    // marginTop:responsiveHeight(6)
+
   },
   priceTag: {
     fontSize: 14,
@@ -267,6 +270,8 @@ export default StyleSheet.create({
     fontSize: 16,
     color: Colors.white,
     fontFamily: "Montserrat-Regular",
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid'
   },
   salePrice: {
     fontSize: 22,

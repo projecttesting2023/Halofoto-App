@@ -238,6 +238,7 @@ export default StyleSheet.create({
   newsDetailsWrap: {
     justifyContent:'center',
     alignItems:'center',
+    //marginHorizontal:10
     //marginBottom:10
   },
   textTime: {

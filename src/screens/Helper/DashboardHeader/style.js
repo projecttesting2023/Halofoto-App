@@ -1,10 +1,15 @@
 import { StatusBar, StyleSheet,Dimensions } from "react-native"
 import Colors from "../../../global/Colors"
 const {height,weight} = Dimensions.get('window')
+import {
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize
+  } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
     headerWrap: {
-        height: '8%',
+        height: responsiveHeight(12),
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -12,7 +17,7 @@ export default StyleSheet.create({
         width: '95%',
         flexDirection: 'row',
         //marginTop: StatusBar.currentHeight*10,
-        marginTop:height*0.03
+        //marginTop:height*0.03
 
     },
     logoWrap: {

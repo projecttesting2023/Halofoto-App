@@ -42,6 +42,7 @@ export default StyleSheet.create({
     height: "100%",
     width: "100%",
     borderRadius: 20,
+    resizeMode:'contain'
     // borderColor:'red',
     // borderWidth:1,
     // borderStyle:'solid'

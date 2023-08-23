@@ -5,6 +5,7 @@ export default StyleSheet.create({
     containerWrap: {
         display: 'flex',
         height: '90%',
+        //backgroundColor:'red'
     },
 
     modalWrap: {
