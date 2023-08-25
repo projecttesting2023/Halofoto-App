@@ -304,6 +304,7 @@ const StaticText = {
         },
         my_profile: {
             heading: `Profil Saya`,
+            heading_new: `Poin Saya`,
             content: {
                 id: `ID`,
                 history: `Riwayat`,
@@ -463,7 +464,9 @@ const StaticText = {
         retry: `Coba Lagi`,
         next: `Buat Akun`,
         review: `Mengatur Ulang`,
-        use_filter: `Gunakan Filter`,
+        //use_filter: `Gunakan Filter`,
+        reset: `Reset`,
+        use_filter: `Pilih Filter`,
         resend_otp: `Mengirimkan ulang kode OTP`,
         skip: `Lewati`,
         insert: `Masukkan`,

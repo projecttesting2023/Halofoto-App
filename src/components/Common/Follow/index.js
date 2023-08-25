@@ -9,15 +9,21 @@ const Follow = () => {
     const { navigate } = useNavigation()
     const onPress = route => navigate(route)
     const onPressFrame = async (route, uri, linking) => {
+        //console.log(route)
+        //console.log(uri)
+        //console.log(linking)
         if (linking) {
             const supported = await Linking.canOpenURL(uri);
             if (supported) {
                 await Linking.openURL(uri);
+            }else{
+                await Linking.openURL(uri);
             }
         } else {
-            navigate(route, { uri })
+            //navigate(route, { uri })
+            await Linking.openURL(uri);
         }
-    }
+    }   
 
     const navMenus = [
         {

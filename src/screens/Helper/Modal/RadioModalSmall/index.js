@@ -6,6 +6,7 @@ import Colors from "../../../../global/Colors"
 import StaticText from '../../../../global/StaticText'
 import RoundedCornerGradientStyleBlue from '../../Button/RoundedCornerGradientStyleBlue'
 import DownArrow from '../../SvgImg/DownArrow'
+import RoundedCornerGradientStyleGreen from '../../Button/RoundedCornerGradientStyleGreen'
 
 
 const RadioModalSmall = ({
@@ -46,8 +47,8 @@ const RadioModalSmall = ({
                             )}
                         </View>
                         <View style={[styles.buttonWrap]}>
-                            <RoundedCornerGradientStyleBlue label={StaticText.button.review} onPress={() => setSlectedValue(null)} />
-                            <RoundedCornerGradientStyleBlue label={StaticText.button.use_filter} onPress={() => {
+                            <RoundedCornerGradientStyleBlue label={StaticText.button.reset} onPress={() => setSlectedValue(null)} />
+                            <RoundedCornerGradientStyleGreen label={StaticText.button.use_filter} onPress={() => {
                                 setSlectedValue(null)
                                 showModalView(!modalView)
                                 return onSelect(slectedValue)

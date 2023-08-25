@@ -1,5 +1,6 @@
 import { StatusBar, StyleSheet } from "react-native"
 import Colors from "../../../global/Colors"
+import { responsiveFontSize } from "react-native-responsive-dimensions"
 
 export default StyleSheet.create({
     container: {
@@ -211,7 +212,7 @@ export default StyleSheet.create({
         justifyContent: "center",
     },
     inputSmall: {
-        fontSize: 20,
+        fontSize: responsiveFontSize(2),
         color: Colors.white,
         flex: 1,
         display: "flex",

@@ -8,7 +8,7 @@ import myProfile from '../../../context/actions/dashboard/myProfile'
 import { showNavigation } from '../../../context/actions/common/manageNavigation'
 import HomeScreen from '../../../screens/Dashboard/Home'
 import StaticText from '../../../global/StaticText'
-import { MY_PRODUCT_LIST, NEWS_LIST, HALO_STORY_LIST, PRODUCT_CATALOG, REVIEW_LIST, REDEMPTION_CENTRE, VOUCHER, MY_PROFILE, MESSAGE_LIST } from '../../../constants/RouteNames'
+import { MY_PRODUCT_LIST, NEWS_LIST, HALO_STORY_LIST, PRODUCT_CATALOG, REVIEW_LIST, REDEMPTION_CENTRE, VOUCHER, MY_PROFILE,POIN_SAYA, MESSAGE_LIST } from '../../../constants/RouteNames'
 
 const Home = () => {
   const { dashboardBannerDispatch, dashboardBannerState: { error, loading, data },
@@ -59,8 +59,8 @@ const Home = () => {
     {
       name: 'my_points',
       label: StaticText.screen.dashboard.tabs.my_points,
-      navigation: MY_PROFILE,
-      component: 'MyProfile'
+      navigation: POIN_SAYA,
+      component: 'PoinSaya'
     },
     {
       name: 'news',

@@ -58,6 +58,7 @@ export const REVIEW_CENTER_SINGLE= 'SingleReview'
 export const WEB_FRAME = 'Web Frame'
 
 export const MY_PROFILE = 'My Profile'
+export const POIN_SAYA = 'PoinSaya'
 export const MY_PROFILE_MANAGE = 'My Profile Manage'
 export const MY_PROFILE_MANAGE_PASSWORD = 'My Profile Manage Password'
 

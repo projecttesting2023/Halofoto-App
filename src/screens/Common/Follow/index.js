@@ -12,6 +12,7 @@ import StaticText from "../../../global/StaticText"
 import BackBtn from "../../../screens/Helper/SvgImg/BackBtn"
 import LogoWhite from "../../../screens/Helper/SvgImg/LogoWhite"
 import styles from "./style"
+import env from '../../../config/env'
 
 import { DASHBOARD } from "../../../constants/RouteNames"
 import FollowTabs from "./FollowTabs"

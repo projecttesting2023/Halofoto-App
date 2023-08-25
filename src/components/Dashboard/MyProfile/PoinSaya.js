@@ -10,7 +10,8 @@ import appleAuth from '@invertase/react-native-apple-authentication';
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 import { GlobalContext } from "../../../context/Provider"
-import MyProfileScreen from "../../../screens/Dashboard/MyProfile"
+//import MyProfileScreen from "../../../screens/Dashboard/MyProfile"
+import PoinSayaScreen from "../../../screens/Dashboard/MyProfile/PoinSaya"
 import myProfile from "../../../context/actions/dashboard/myProfile"
 import { showNavigation } from "../../../context/actions/common/manageNavigation"
 import manageProfileImage, { clearProfileImage } from "../../../context/actions/dashboard/manageProfileImage"
@@ -18,7 +19,7 @@ import manageProfileImage, { clearProfileImage } from "../../../context/actions/
 import StaticText from "../../../global/StaticText"
 import { logout } from "../../../context/actions/auth/login"
 
-const MyProfile = () => {
+const PoinSaya = () => {
   const isFocused = useIsFocused()
   const [form, setForm] = useState({})
   const [errors, setErrors] = useState({})
@@ -92,7 +93,6 @@ const MyProfile = () => {
   }, [profileImageError, profileError])
 
   const onChange = ({ name, value }) => {
-    console.log('log from fileupload', value)
     setForm((form) => {
       return {
         ...form,
@@ -163,14 +163,14 @@ const MyProfile = () => {
     let result = await DocumentPicker.getDocumentAsync({
       type: "image/*",
     })
-    console.log('profile picture', result)
+
     if (result?.name && result.name != "" && result?.size) {
       onChange({ name: "profile_image", value: result })
     }
   }
 
   return (
-    <MyProfileScreen
+    <PoinSayaScreen
       pickDocument={pickDocument}
       data={profileImageData?.user ? profileImageData : profileData}
       loading={profileLoading}
@@ -183,4 +183,4 @@ const MyProfile = () => {
   )
 }
 
-export default MyProfile
+export default PoinSaya

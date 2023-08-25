@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet,Dimensions } from "react-native"
+import { StatusBar, StyleSheet,Dimensions,Platform } from "react-native"
 import Colors from "../../../global/Colors"
 const {height,weight} = Dimensions.get('window')
 import {
@@ -21,8 +21,9 @@ export default StyleSheet.create({
 
     },
     logoWrap: {
-        height: height*0.1,
-        width:'30%',
+        height: responsiveHeight(5),
+        width:responsiveWidth(30),
+        marginTop: Platform.OS == 'ios'? responsiveHeight(2):0
        
     },
     profileWrap: {
@@ -32,7 +33,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
         borderRadius: 20,
-        height: 34,
+        height: responsiveHeight(4),
+        marginTop:Platform.OS == 'ios'? responsiveHeight(2):0
     },
     profilePoints: {
         flexDirection: 'row',

@@ -22,6 +22,7 @@ import MyProduct from "../components/Dashboard/MyProduct"
 import SingleProduct from "../components/Dashboard/MyProduct/SingleProduct"
 import SingleReview from "../components/Dashboard/ReviewCenter/SingleReview"
 import MyProfile from "../components/Dashboard/MyProfile"
+import PoinSaya from "../components/Dashboard/MyProfile/PoinSaya"
 import ManageProfile from "../components/Dashboard/MyProfile/ManageProfile"
 import ManagePassword from "../components/Dashboard/MyProfile/ManagePassword"
 import ReviewList from "../components/Dashboard/ReviewCenter/ReviewList"
@@ -60,6 +61,7 @@ const DashboardStackNavigator = () => {
                 <DashboardStack.Screen name={RouteNames.REVIEW_LIST} component={ReviewList} />
                 <DashboardStack.Screen name={RouteNames.REVIEW_CENTER_SINGLE} component={SingleReview} />
                 <DashboardStack.Screen name={RouteNames.MY_PROFILE} component={MyProfile} />
+                <DashboardStack.Screen name={RouteNames.POIN_SAYA} component={PoinSaya} />
                 <DashboardStack.Screen name={RouteNames.MY_PROFILE_MANAGE} component={ManageProfile} />
                 <DashboardStack.Screen name={RouteNames.MY_PROFILE_MANAGE_PASSWORD} component={ManagePassword} />
                 <DashboardStack.Screen name={RouteNames.REDEMPTION_CENTRE} component={RedemptionCentreList} />
