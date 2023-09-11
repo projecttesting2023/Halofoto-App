@@ -1,5 +1,6 @@
 import { StyleSheet,Dimensions } from "react-native";
 import Colors from "../../../global/Colors";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 const {height,weight} = Dimensions.get('window')
 
 export default StyleSheet.create({
@@ -65,6 +66,16 @@ export default StyleSheet.create({
     display: "flex",
     justifyContent: 'center',
     alignItems: 'stretch',
+    //height:responsiveHeight(31)
+  },
+  mountTypedWrap2nd: {
+    marginTop: 15,
+    marginBottom: 34,
+    marginLeft: 10,
+    display: "flex",
+    justifyContent: 'center',
+    alignItems: 'stretch',
+    height:responsiveHeight(31)
   },
   headerWrap: {
     marginRight: 20,

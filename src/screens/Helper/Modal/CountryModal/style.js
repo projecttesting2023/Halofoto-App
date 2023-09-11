@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import Colors from "../../../../global/Colors"
+import { responsiveFontSize } from "react-native-responsive-dimensions"
 
 export default StyleSheet.create({
     containerWrap: {
@@ -19,11 +20,11 @@ export default StyleSheet.create({
     modalHeaderWrap: {
         paddingHorizontal: '5%',
         paddingVertical: '5%',
-        borderBottomColor: Colors.iron, 
-        borderBottomWidth: 1, 
-        borderBottomStyle: 'solid', 
+        borderBottomColor: Colors.iron,
+        borderBottomWidth: 1,
+        borderBottomStyle: 'solid',
     },
-    
+
     modalBgWrap: {
         height: '100%',
     },
@@ -100,18 +101,18 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
     },
-    inputWrapModal:{
-        width:'100%',
-        marginRight:5
-      },
-    inputTxt: {
+    inputWrapModal: {
+        width: '100%',
+        marginRight: 5
+    },
+    inputTxt1: {
         color: Colors.white,
         // borderColor: 'red',
         // borderStyle: 'solid',
         // borderWidth: 1,
         width: '100%',
         paddingLeft: 10,
-
+        fontSize:responsiveFontSize(2)
     },
 
     countryItemLabel: {
@@ -138,23 +139,23 @@ export default StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        
+
     },
 
-    errorWrap:{
-        borderColor:Colors.red_violet,
-        borderStyle:'solid',
-        borderWidth:1,
-        borderRadius:20
+    errorWrap: {
+        borderColor: Colors.red_violet,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        borderRadius: 20
     },
 
     error: {
         color: Colors.red_violet,
         fontSize: 10,
         textTransform: 'uppercase',
-        marginTop:-20,
-        marginBottom:20,
-        marginLeft:15
+        marginTop: -20,
+        marginBottom: 20,
+        marginLeft: 15
     }
 
 })

@@ -12,6 +12,7 @@ import BackBtn from "../../Helper/SvgImg/BackBtn"
 import styles from "./SettingsWebFrameStyle"
 import { SETTINGS_WEBVIEW_MAIN } from "../../../constants/RouteNames"
 import LinearGradient from 'react-native-linear-gradient';
+import env from '../../../config/env'
 
 const SettingsWebFrame = ({ onPress, uri }) => {
    
@@ -28,7 +29,7 @@ const SettingsWebFrame = ({ onPress, uri }) => {
             <View style={styles.backWrap}>
               <BackBtn />
             </View>
-            {uri ===  'http://103.191.209.121:3001/page/privacy-policy' ? 
+            {uri ===  `${env.WEB_URL}/page/terms-conditions` ? 
               <Text style={styles.pageHeading}>
                 {StaticText.screen.settings.tabs.privacy_policy}
               </Text>

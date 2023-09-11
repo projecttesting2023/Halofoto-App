@@ -17,11 +17,12 @@ export default ({
     formData.append('warrenty_id', warrantyId)
 
     axiosInstance.post('/mobile/request-e-repair', formData).then(res => {
+        //console.log(res.data);
          dispatch({
             type: E_REPAIR_SUCCESS,
             payload: res.data,
         })
-        onSuccess(res.data)
+        onSuccess(res.status)
     }).catch(err => {
 
         dispatch({

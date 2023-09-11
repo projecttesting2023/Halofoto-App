@@ -108,11 +108,17 @@ const MessageList = () => {
   }
 
   const onRefresh = () => {
-    if (currentPage > 1) {
-      setCurrentPage(1)
-      setRefreshing(true)
-      setCurrentPage(1)
+    // if (currentPage > 1) {
+    //   setCurrentPage(1)
+    //   setRefreshing(true)
+    // }
+    let params = {
+      page: 1,
+      filter: userFilterData.join("&").replace(/,/g, "&"),
     }
+    messageList(params)(messageListDispatch)
+    setPagination(false)
+    
   }
 
   return (

@@ -22,6 +22,7 @@ const MyProfile = () => {
   const isFocused = useIsFocused()
   const [form, setForm] = useState({})
   const [errors, setErrors] = useState({})
+
   const { navigate, goBack } = useNavigation()
   const MAX_FILE_UPLOAD_SIZE = 1024 * 1024 * 2
 
@@ -84,26 +85,24 @@ const MyProfile = () => {
 
   useEffect(() => {
 
-    if (profileImageError) {
+    if (!!profileImageError) {
       Toast.show(profileImageError?.error ? profileImageError?.error : profileImageError)
-    } else if (profileError) {
-      Toast.show(profileError?.error ? profileError?.error : profileError)
+    } else if (!!profileError) {
+      Toast.show(typeof profileError?.error !== 'undefined' ? profileError?.error : profileError)
     }
   }, [profileImageError, profileError])
 
   const onChange = ({ name, value }) => {
-    console.log('log from fileupload', value)
     setForm((form) => {
       return {
         ...form,
-        [name]: {
+        profile_image: {
           uri: value.uri,
-          mimeType: getFileMimeType(value.uri),
-          name: getFileName(value.uri),
-          size: value?.size?.length ? value?.size : null,
         },
       }
     })
+
+    
 
     if (value?.size > MAX_FILE_UPLOAD_SIZE) {
       setErrors((prev) => {
@@ -111,23 +110,28 @@ const MyProfile = () => {
       })
       Toast.show(StaticText.alert.upload_limit_error)
     } else {
+      manageProfileImage({
+        value
+      })(profileImageUpdateDispatch)((response) => {
+        Toast.show(StaticText.alert.record_update_success)
+      })
       setErrors((prev) => {
         return { ...prev, [name]: null }
       })
-      onSubmit()
+      // onSubmit()
     }
   }
 
-  const onSubmit = () => {
-    if (
-      Object.values(errors).every((item) => !item) &&
-      Object.values(form).every((item) => item || item?.trim()?.length > 0)
-    ) {
-      manageProfileImage(form)(profileImageUpdateDispatch)((response) => {
-        Toast.show(StaticText.alert.record_update_success)
-      })
-    }
-  }
+  // const onSubmit = () => {
+  //   if (
+  //     Object.values(errors).every((item) => !item) &&
+  //     Object.values(form).every((item) => item || item?.trim()?.length > 0)
+  //   ) {
+  //     manageProfileImage(form)(profileImageUpdateDispatch)((response) => {
+  //       Toast.show(StaticText.alert.record_update_success)
+  //     })
+  //   }
+  // }
 
   useEffect(() => {
     isFocused && (showNavigation()(navigationDispatch), myProfile()(myProfileDispatch))
@@ -139,34 +143,41 @@ const MyProfile = () => {
     Toast.show(StaticText.alert.copy_clipboard_success)
   }
 
-  const getFileMimeType = (fileUri) => {
-    let fileExt = fileUri.split(".").pop()
-    if (
-      fileExt == "jpeg" ||
-      fileExt == "jpg" ||
-      fileExt == "JPEG" ||
-      fileExt == "JPG"
-    ) {
-      return "image/jpeg"
-    } else if (fileExt == "PNG" || fileExt == "png") {
-      return "image/png"
-    } else if (fileExt == "GIF" || fileExt == "gif") {
-      return "image/gif"
-    }
-  }
+  // const getFileMimeType = (fileUri) => {
+  //   let fileExt = fileUri.split(".").pop()
+  //   if (
+  //     fileExt == "jpeg" ||
+  //     fileExt == "jpg" ||
+  //     fileExt == "JPEG" ||
+  //     fileExt == "JPG"
+  //   ) {
+  //     return "image/jpeg"
+  //   } else if (fileExt == "PNG" || fileExt == "png") {
+  //     return "image/png"
+  //   } else if (fileExt == "GIF" || fileExt == "gif") {
+  //     return "image/gif"
+  //   }
+  // }
 
-  const getFileName = (fileUri) => {
-    return fileUri.split("/").pop()
-  }
+  // const getFileName = (fileUri) => {
+  //   return fileUri.split("/").pop()
+  // }
 
   const pickDocument = async () => {
     let result = await DocumentPicker.getDocumentAsync({
       type: "image/*",
     })
-    console.log('profile picture', result)
-    if (result?.name && result.name != "" && result?.size) {
-      onChange({ name: "profile_image", value: result })
-    }
+     //console.log('profile picture', result)
+     if(result?.mimeType == "image/jpeg" || result?.mimeType == "image/png"){
+        if (result?.name && result.name != "" && result?.size) {
+          onChange({ name: "profile_image", value: result })
+        }
+     }else{
+      Alert.alert('Warring', 'You need to use JPEG or PNG file', [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ])
+     }
+    
   }
 
   return (

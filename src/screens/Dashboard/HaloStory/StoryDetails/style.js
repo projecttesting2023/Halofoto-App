@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native'
 import Constants from "expo-constants"
 import Colors from '../../../../global/Colors'
+import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions'
 
 export default StyleSheet.create({
 
@@ -134,7 +135,7 @@ export default StyleSheet.create({
     marginRight: 10,
   },
   profileTitle: {
-    fontSize: 12,
+    fontSize: responsiveFontSize(1),
     color: Colors.white,
   },
   iconWrap: {
@@ -238,6 +239,7 @@ export default StyleSheet.create({
   newsDetailsWrap: {
     justifyContent:'center',
     alignItems:'center',
+    paddingBottom:responsiveHeight(5)
     //marginHorizontal:10
     //marginBottom:10
   },

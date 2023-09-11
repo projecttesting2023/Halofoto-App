@@ -19,6 +19,7 @@ import ProductList from "./ProductList";
 import styles from "./style";
 import VideoModal from "../../Helper/Modal/VideoModal";
 import LinearGradient from 'react-native-linear-gradient';
+import { ScrollView } from "react-native-gesture-handler";
 
 const MyProduct = ({
   data,
@@ -68,6 +69,7 @@ const MyProduct = ({
       > */}
       <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
+          <ScrollView>
           <View style={styles.topHeader}>
             <Pressable
               style={styles.titleHolder}
@@ -149,6 +151,7 @@ const MyProduct = ({
           ) : (
             <MyProductNoList onPressRegister={onPressRegister} />
           )}
+          </ScrollView>
         </SafeAreaView>
         </LinearGradient>
       {/* </ImageBackground> */}

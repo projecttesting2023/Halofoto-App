@@ -1,5 +1,6 @@
 import { StyleSheet, StatusBar, Dimensions, Platform } from "react-native";
 import Colors from "../../../global/Colors";
+import { responsiveFontSize, responsiveHeight } from "react-native-responsive-dimensions";
 
 const { height, weight } = Dimensions.get('window')
 
@@ -45,7 +46,7 @@ export default StyleSheet.create({
     paddingRight: 10
   },
   formWrapp: {
-    height: height * 0.45,
+    height: responsiveHeight(40),
     width: '100%',
   },
   inputWrapp: {
@@ -80,7 +81,7 @@ export default StyleSheet.create({
 
   buttonWrap: {
     width: "100%",
-    height: '18%',
+    height: responsiveHeight(7),
   },
   line: {
     marginLeft: 22,
@@ -88,27 +89,28 @@ export default StyleSheet.create({
     borderTopColor: Colors.denim,
     borderTopWidth: 1,
     borderStyle: "solid",
-    marginBottom: 10,
-    marginTop: '-5%'
+    //marginBottom: 10,
+    //marginTop: '-5%'
   },
   socialMediaLogin: {
     display: "flex",
     justifyContent: "center",
-    height: '10%',
-    marginTop: 10,
-    marginBottom: '25%',
+    //height: '10%',
+    //marginTop: responsiveHeight(1),
+    //marginBottom: '25%',
   },
   textWrap: {
-    marginBottom: 20,
+    marginBottom: responsiveHeight(3),
     flexDirection: "row",
     justifyContent: "center",
+    marginTop: responsiveHeight(1)
   },
   iconBoxWrap: {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: '16%',
-    marginTop: 10
+    //marginBottom: '16%',
+    marginTop: responsiveHeight(2)
   },
   iconBox: {
     backgroundColor: Colors.deep_cove,
@@ -179,7 +181,7 @@ export default StyleSheet.create({
   },
 
   textNewAccount: {
-    fontSize: 14,
+    fontSize: responsiveFontSize(1.5),
     fontFamily: "Montserrat-Regular",
     fontWeight: "500",
     textAlign: "center",
@@ -189,7 +191,7 @@ export default StyleSheet.create({
 
   textSignLink: {
     marginLeft: 5,
-    fontSize: 14,
+    fontSize: responsiveFontSize(1.5),
     fontFamily: "Montserrat-Regular",
     fontWeight: "500",
     textAlign: "center",

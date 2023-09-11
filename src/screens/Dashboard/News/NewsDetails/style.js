@@ -1,6 +1,7 @@
 import { Platform, StyleSheet, Dimensions} from "react-native"
 import Constants from "expo-constants"
 import Colors from "../../../../global/Colors"
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 const {height,weight} = Dimensions.get('window')
 
 export default StyleSheet.create({
@@ -102,12 +103,13 @@ export default StyleSheet.create({
 
   mainScroll: {
     height: "100%",
+    paddingBottom:Platform.OS === 'ios' ? 0 : 0
   },
 
   mainBodyWrap: {
     paddingLeft: 20,
     paddingRight: 20,
-    marginBottom: height*0.4
+    //marginBottom: height*0.4
   },
 
   categoryListBanner: {
@@ -140,6 +142,7 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingTop: 25,
+    paddingRight:responsiveWidth(9)
   },
   categoryTagWrap: {
     display: 'flex',
@@ -152,7 +155,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     marginTop: 5,
     marginRight: 0,
-    marginBottom:height*0.2
+    marginBottom:-responsiveHeight(20)
   },
   newsCard: {
     borderColor: "rgba(255, 255, 255, 0.2)",

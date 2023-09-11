@@ -9,6 +9,7 @@ import Colors from '../../../../global/Colors'
 import styles from './style'
 import Search from '../../SvgImg/Search'
 import DownArrow from '../../SvgImg/DownArrow'
+import { responsiveFontSize } from 'react-native-responsive-dimensions';
 
 const CountryModal = ({
     heading,
@@ -142,7 +143,7 @@ const CountryModal = ({
                             showModalView(!modalView)
                         }
                         }>
-                            <Text style={[style.inputTxt]}>{value}</Text>
+                            <Text style={{color: '#FFF',width: '90%',paddingLeft: 10,fontSize:responsiveFontSize(2)}}>{value}</Text>
                             <DownArrow />
                         </Pressable>
                     </View>

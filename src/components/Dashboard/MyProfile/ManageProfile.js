@@ -17,11 +17,13 @@ import { showNavigation } from "../../../context/actions/common/manageNavigation
 import manageProfile from "../../../context/actions/dashboard/manageProfile"
 import country from "../../../context/actions/common/country"
 import StaticText from "../../../global/StaticText"
+import manageProfileImage from "../../../context/actions/dashboard/manageProfileImage"
 
 const ManageProfile = () => {
     const {
         profileUpdateDispatch,
         profileUpdateState: { error, loading, data },
+        profileImageUpdateDispatch,
         countryListState: { countryListerror, countryListloading, countryListData },
         countryListDispatch,
         navigationDispatch, navigationState: { display }
@@ -47,7 +49,7 @@ const ManageProfile = () => {
                 const user = await AsyncStorage.getItem("user")
                 if (user) {
                     let user_data = JSON.parse(user)
-                    
+
                     setForm({
                         name: user_data?.name,
                         email: user_data?.email,
@@ -120,7 +122,8 @@ const ManageProfile = () => {
     }, [error])
 
     const onChange = ({ name, value }) => {
-
+        // console.log(value.uri,'image uri from file upload')
+        // console.log(name)
         if (name == 'profile_image') {
             setForm((form) => {
                 return {
@@ -145,6 +148,12 @@ const ManageProfile = () => {
             Toast.show(StaticText.alert.upload_limit_error)
         }
         else if (value !== "") {
+            manageProfileImage({
+                value
+            })(profileImageUpdateDispatch)((response) => {
+                Toast.show(StaticText.alert.record_update_success)
+            })
+
             if (name == "phone_country_code" && !value?.ext_code) {
                 setErrors((prev) => {
                     return { ...prev, [name]: StaticText.alert.error_phone_ext_length }
@@ -163,6 +172,8 @@ const ManageProfile = () => {
                 return { ...prev, [name]: StaticText.alert.error }
             })
         }
+
+
     }
 
     const onSubmit = () => {
@@ -219,6 +230,7 @@ const ManageProfile = () => {
         }
 
         if (Object.values(form).length >= 9 && Object.values(errors).every((item) => !item)) {
+
             manageProfile(form)(profileUpdateDispatch)(response => Toast.show(StaticText.alert.record_update_success))
         }
     }
@@ -242,11 +254,17 @@ const ManageProfile = () => {
         let result = await DocumentPicker.getDocumentAsync({
             type: 'image/*'
         })
+        if (result?.mimeType == "image/jpeg" || result?.mimeType == "image/png") {
+            if (result?.name && result.name != '' && result?.size) {
+                result?.size <= MAX_FILE_UPLOAD_SIZE && setProfileImage(result?.uri)
+                console.log(result, 'result from pickDocument')
+                onChange({ name: 'profile_image', value: result })
 
-        if (result?.name && result.name != '' && result?.size) {
-            result?.size <= MAX_FILE_UPLOAD_SIZE && setProfileImage(result?.uri)
-            onChange({ name: 'profile_image', value: result })
-
+            }
+        } else {
+            Alert.alert('Warring', 'You need to use JPEG or PNG file', [
+                { text: 'OK', onPress: () => console.log('OK Pressed') },
+            ])
         }
     }
 

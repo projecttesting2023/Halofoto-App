@@ -291,7 +291,8 @@ const FilterModal = ({
 
                       {filterData?.message_categories &&
                         filterData?.message_categories?.length > 0 && (
-                          <View style={styles.mountTypedWrap}>
+                          <>
+                          <View style={styles.mountTypedWrap2nd}>
                             <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>
                               {StaticText.modal.message_list.category}
                             </Text>
@@ -353,44 +354,46 @@ const FilterModal = ({
                               ))}
                             </View>
                           </View>
+                          <View style={styles.mountTypedWrap2nd}>
+                          <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.message_list.date}</Text>
+                          <View style={styles.cardWrap}>
+                            <Pressable
+                              style={
+                                selectedDays == 30
+                                  ? [styles.genderCardButton, styles.genderCardActive]
+                                  : styles.genderCardButton
+                              }
+                              onPress={() => {
+                                setSelectedDays(30)
+                              }}
+                            >
+                              <Text style={[styles.cardText]}>
+                                {StaticText.modal.message_list.day_filter1}
+                              </Text>
+                            </Pressable>
+                            <Pressable
+                              style={
+                                selectedDays == 10
+                                  ? [styles.genderCardButton, styles.genderCardActive]
+                                  : styles.genderCardButton
+                              }
+                              onPress={() => {
+                                setSelectedDays(10)
+                              }}
+                            >
+                              <Text style={[styles.cardText]}>
+                                {StaticText.modal.message_list.day_filter2}
+                              </Text>
+                            </Pressable>
+                          </View>
+                        </View>
+                        </>
                         )}
-
+{/* 
                       {filterData?.message_categories &&
                         filterData?.message_categories?.length > 0 && (
-                          <View style={styles.mountTypedWrap}>
-                            <Text style={[styles.headerText, { color: isDarkTheme ? Colors.white : Colors.black }]}>{StaticText.modal.message_list.date}</Text>
-                            <View style={styles.cardWrap}>
-                              <Pressable
-                                style={
-                                  selectedDays == 30
-                                    ? [styles.genderCardButton, styles.genderCardActive]
-                                    : styles.genderCardButton
-                                }
-                                onPress={() => {
-                                  setSelectedDays(30)
-                                }}
-                              >
-                                <Text style={[styles.cardText]}>
-                                  {StaticText.modal.message_list.day_filter1}
-                                </Text>
-                              </Pressable>
-                              <Pressable
-                                style={
-                                  selectedDays == 10
-                                    ? [styles.genderCardButton, styles.genderCardActive]
-                                    : styles.genderCardButton
-                                }
-                                onPress={() => {
-                                  setSelectedDays(10)
-                                }}
-                              >
-                                <Text style={[styles.cardText]}>
-                                  {StaticText.modal.message_list.day_filter2}
-                                </Text>
-                              </Pressable>
-                            </View>
-                          </View>
-                        )}
+                          
+                        )} */}
 
                       <View style={[styles.buttonWrap]}>
                         <RoundedCornerGradientStyleBlue

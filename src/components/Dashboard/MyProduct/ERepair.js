@@ -49,16 +49,16 @@ const ERepair = ({ route, navigation }) => {
     if (form.subject && form.message) {
       eRepair(form, warrantyId)(eRepairDispatch)(response => {
         setForm({})
-        Alert.alert(response?.message)
+        //Alert.alert(response?.message)
       })
     }
   }
 
-  useEffect(() => {
-    errors?.message?.length && Alert.alert(StaticText.alert.error_heading, errors?.message, [
-      { text: StaticText.button.ok, onPress: () => { } },
-    ])
-  }, [errors])
+  // useEffect(() => {
+  //   errors?.message?.length && Alert.alert(StaticText.alert.error_heading, errors?.message, [
+  //     { text: StaticText.button.ok, onPress: () => { } },
+  //   ])
+  // }, [errors])
 
   return (
     <ERepairScreen

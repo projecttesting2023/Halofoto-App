@@ -19,7 +19,7 @@ const ListItem = ({ item, onPress, readStatus }) => {
           <View style={styles.messageContentWrap}>
             {item?.read_status <= 0 ? (!readStatus.includes(item?.id) ?  <View style={styles.listDots}></View> : <></>):<></>}
             <View style={styles.messageContent}>
-              <Text style={styles.textContent}>{item?.message}</Text>
+              <Text style={styles.textContent} numberOfLines={2}>{item?.message}</Text>
               <View style={styles.messageMeta}>
                 <Text style={styles.textContent}>
                   {moment(item?.created_at).format("dddd")}

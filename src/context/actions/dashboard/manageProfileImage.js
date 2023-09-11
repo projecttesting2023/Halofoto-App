@@ -9,17 +9,15 @@ export const clearProfileImage= () => dispatch => {
     })
 }
 
-export default (form) => dispatch => onSuccess => {
+export default ({value}) => dispatch => onSuccess => {
     dispatch({
         type: MY_PROFILE_IMAGE_UPDATE_LOADING
     })
-    
-    let { profile_image } = form
+
     let formData = new FormData()
-    formData.append('profile_image', { uri: profile_image?.uri, name: profile_image?.name, type: profile_image?.mimeType })
+    formData.append('profile_image', { name:value.name, uri:value.uri, type:value.mimeType })
     
     axiosInstance.post('/mobile/update-profile-image', formData).then(res => {
-      
         AsyncStorage.removeItem("user")
         AsyncStorage.setItem("user", JSON.stringify(res.data.user))
         dispatch({
@@ -27,8 +25,9 @@ export default (form) => dispatch => onSuccess => {
             payload: res.data,
         })
         onSuccess(res.data)
+
     }).catch(err => {
-      
+      //console.log('error',err)
         dispatch({
             type: MY_PROFILE_IMAGE_UPDATE_FAIL,
             payload: err.response ? err.response.data : { error: StaticText.axios.error }

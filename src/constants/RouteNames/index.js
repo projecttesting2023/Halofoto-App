@@ -8,11 +8,11 @@ export const REGISTER = 'Register'
 export const FORGOT_PASSWORD = 'Forgot Password'
 export const RESET_PASSWORD = 'Reset Password'
 
-export const ABOUT = 'About'
-export const DASHBOARD_TAB_WEBVIEW_NAV = 'Follow'
+export const ABOUT = 'Tentang Kami'
+export const DASHBOARD_TAB_WEBVIEW_NAV = 'Ikuti Kami'
 export const DASHBOARD_WEBVIEW_MAIN = 'Webview Main'
 
-export const SETTINGS = 'Settings'
+export const SETTINGS = 'Pengaturan'
 
 export const OTP_VERIFICATION = 'Otp Verification'
 export const CHECK_REFERRAL_GENERAL_USER = 'Check Referral General User'
@@ -36,9 +36,9 @@ export const WARENTY_REGISTRATION_THANK_YOU = 'Warenty Registration Thank You'
 export const PRODUCT_DETAILS = 'Product Details'
 
 export const AUTH_TAB_NAV = 'Auth Tab Nav'
-export const AUTH_TAB_STACK_NAV = 'Home'
+export const AUTH_TAB_STACK_NAV = 'Beranda'
 
-export const DASHBOARD_TAB_STACK_NAV = 'Home'
+export const DASHBOARD_TAB_STACK_NAV = 'Beranda'
 
 export const NEWS_LIST = 'News List'
 export const NEWS_DETAILS = 'News Details'

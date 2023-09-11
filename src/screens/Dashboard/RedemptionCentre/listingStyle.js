@@ -1,6 +1,7 @@
 import { Dimensions, Platform, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import Colors from "../../../global/Colors";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const {height,width} = Dimensions.get('window')
 
@@ -81,7 +82,8 @@ export default StyleSheet.create({
     width: 21,
   },
   mainScroll: {
-    height:'100%'
+    height:'100%',
+    paddingBottom:responsiveHeight(20)
   },
   contentContainer: {
     paddingBottom: 280,

@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import Colors from "../../../../global/Colors"
+import { responsiveHeight } from "react-native-responsive-dimensions"
 
 export default StyleSheet.create({
    
@@ -58,8 +59,9 @@ export default StyleSheet.create({
     errorWrap: {
         borderColor: Colors.red_violet,
         borderStyle: 'solid',
-        borderWidth: 1,
-        borderRadius: 20
+        //borderWidth: 1,
+        borderRadius: 20,
+        marginBottom:responsiveHeight(1)
     },
     errorTextWrap: {
         height: 16,
@@ -75,7 +77,7 @@ export default StyleSheet.create({
         color: Colors.red_violet,
         fontSize: 10,
         textTransform: 'uppercase',
-        marginTop:-20,
+        marginTop:responsiveHeight(1.9),
         marginBottom:20,
         marginLeft:15
     },

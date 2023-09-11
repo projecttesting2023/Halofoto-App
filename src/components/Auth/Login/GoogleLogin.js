@@ -30,7 +30,7 @@ const GoogleLogin = () => {
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       await auth().signInWithCredential(googleCredential);
       const fcmToken = await AsyncStorage.getItem("fcm_token")
-      console.log(user, 'data from google signin')
+      // console.log(user, 'data from google signin')
       let form = {
         email: user?.email,
         name: user?.name,

@@ -2,6 +2,7 @@ import {
     Text,
     Animated,
     Pressable,
+    View
 } from "react-native"
 
 import MyProduct from "../../Helper/SvgImg/MyProduct"
@@ -16,7 +17,7 @@ import HaloStory from "../../Helper/SvgImg/HaloStory"
 import styles from "./style"
 
 const DashboardButtons = ({
-    menu, onPress
+    menu, onPress, isNewNotification
 }) => {
 
     const animated = new Animated.Value(1)
@@ -75,6 +76,10 @@ const DashboardButtons = ({
                     {menu.label}
                 </Text>
             </Animated.View>
+            {menu.label == 'Pesan' ?
+                <View style={{ position: 'absolute', top: 0, right: -5 }}><Text style={{ color: 'red' }}>{'\u2B24'}{isNewNotification}</Text></View>
+                :
+                null}
         </Pressable>
     )
 }

@@ -151,6 +151,12 @@ const Settings = () => {
       navigation: SETTINGS_WEB_FRAME,
       url: `${env.WEB_URL}/page/privacy-policy`
     },
+    {
+      name: 'software_license',
+      label: StaticText.screen.settings.tabs.software_license,
+      navigation: SETTINGS_WEB_FRAME,
+      url: `${env.WEB_URL}/page/software-license`
+    },
   ]
 
 

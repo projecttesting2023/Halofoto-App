@@ -67,7 +67,7 @@ export default StyleSheet.create({
         marginLeft:5,
     },
     profileTitle: {
-        fontSize: 12, 
+        fontSize: responsiveFontSize(1.5), 
         color: Colors.white,
     },
 })

@@ -13,6 +13,7 @@ import styles from './RegisterWarrantyStyle'
 import ModelNumberModal from '../../Helper/Modal/ModelNumberModal'
 import InformationWhite from '../../Helper/SvgImg/InformationWhite'
 import LinearGradient from 'react-native-linear-gradient'
+import env from '../../../config/env'
 
 const RegisterWarranty = ({
     data,
@@ -136,7 +137,7 @@ const RegisterWarranty = ({
                             <View style={styles.warrantyWrap}>
                                 <InformationWhite />
                                 <Text style={styles.inputWarrantyText} onPress={() => {
-                                    Linking.openURL('http://103.191.209.121:3001/page/terms-conditions');
+                                    Linking.openURL(`${env.WEB_URL}/page/terms-conditions`);
                                 }}>The following <Text style={styles.buttonLinkText}>warranty terms and conditions</Text> apply to this product</Text>
                             </View>
 

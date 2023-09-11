@@ -8,7 +8,7 @@ export default (enteredPin) => dispatch => onSuccess => {
         type: OTP_VERIFY_LOADING
     })
 
-    console.log(enteredPin,'enteredPin')
+    //console.log(enteredPin,'enteredPin')
     let formData = new FormData()
     formData.append('user_id', enteredPin)
 

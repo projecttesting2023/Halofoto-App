@@ -27,7 +27,7 @@ const ListItem = ({ item, onPress }) => {
 
 
 
-                <Text style={styles.textCardNews}>{item?.name}</Text>
+                <Text style={styles.textCardNews} numberOfLines={3}>{item?.name}</Text>
                 <Text style={styles.textCardSmall}>
                     {moment(item.created_at).format("DD MMM YYYY")}
                 </Text>

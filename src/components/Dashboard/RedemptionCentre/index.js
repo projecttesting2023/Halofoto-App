@@ -10,6 +10,7 @@ import StaticText from "../../../global/StaticText"
 
 const RedemptionCentre = () => {
   const {
+    myProfileState: { profileError, profileLoading, profileData },
     redemptionCentreListState: { data, error, loading },
     redemptionCentreListDispatch,
     reedemVoucherState: {
@@ -32,6 +33,7 @@ const RedemptionCentre = () => {
 
   const onPress = (route, params) =>
     route ? navigate(route, params) : goBack()
+
 
   useFocusEffect(
     useCallback(() => {
@@ -64,8 +66,14 @@ const RedemptionCentre = () => {
 
   const onShare = async () => {
     try {
+      // const result = await Share.share({
+      //   message: `${StaticText.screen.my_profile.content.download_helofoto} https://play.google.com/store/apps`,
+      // })
       const result = await Share.share({
-        message: `${StaticText.screen.my_profile.content.download_helofoto} https://play.google.com/store/apps`,
+        message: `${StaticText.screen.my_profile.content.download_helofoto
+          } https://play.google.com/store/apps ${profileData?.user?.referral_code?.length &&
+          ` | ${StaticText.screen.my_profile.content.referral_code}: ${profileData?.user?.referral_code}`
+          }`,
       })
       if (result.action === Share.sharedAction) {
         if (result.activityType) {

@@ -1,7 +1,7 @@
 import { Platform, StyleSheet } from "react-native"
 import Colors from "../../../../global/Colors"
 import Constants from 'expo-constants'
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import { responsiveFontSize, responsiveHeight } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   container: {
@@ -68,7 +68,8 @@ export default StyleSheet.create({
     width: 21,
   },
   mainScroll: {
-    height: "100%"
+    height: "100%",
+    paddingBottom:responsiveHeight(2)
   },
   
   newsSlider: {
@@ -259,7 +260,8 @@ export default StyleSheet.create({
   textCardNews: {
     width: "100%",
     height: 64,
-    fontSize: 18,
+    fontSize: responsiveFontSize(2),
+    paddingRight:5,
     color: Colors.white,
     fontWeight: "600",
     marginBottom: 10,

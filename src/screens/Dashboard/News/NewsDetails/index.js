@@ -21,6 +21,7 @@ import RecentNews from "./RecentNews"
 import AnimatedHeader from "../../../Helper/AnimatedHeader"
 import styles from "./style"
 import { Video } from 'expo-av'
+import { responsiveWidth } from "react-native-responsive-dimensions"
 
 const NewsDetails = ({
   data,
@@ -190,7 +191,7 @@ const NewsDetails = ({
 
 
 
-                <View style={{ marginBottom: 14 }}>
+                <View style={{ marginBottom: 14,justifyContent:'center',alignItems:'center',paddingRight:responsiveWidth(10) }}>
                   <RenderHtml
                     contentWidth={width}
                     source={newsDetails}

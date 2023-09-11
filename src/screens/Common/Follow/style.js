@@ -1,6 +1,6 @@
 import { StyleSheet, StatusBar, Dimensions } from "react-native";
 import Colors from "../../../global/Colors";
-import { responsiveFontSize, responsiveWidth } from "react-native-responsive-dimensions";
+import { responsiveFontSize, responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 
 const {height,width} = Dimensions.get('window')
 
@@ -56,7 +56,7 @@ export default StyleSheet.create({
   },
   tabWrap: {
     marginTop:10,
-    marginBottom:100,
+    marginBottom:responsiveHeight(20),
     width: width*0.9,
   },
   tabButtonWrap:{

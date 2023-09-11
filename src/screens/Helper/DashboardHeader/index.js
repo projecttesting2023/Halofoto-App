@@ -28,8 +28,9 @@ const DashboardHeader = ({
             <ActivityIndicator
               size="small"
               color={Colors.royal_blue}
-              style={{ marginBottom: 16 }}
+              // style={{ marginBottom: 16 }}
             />
+           
           ) : (
             <Text style={styles.profileTitle}>
               {StaticText.screen.dashboard.header.hello},{" "}

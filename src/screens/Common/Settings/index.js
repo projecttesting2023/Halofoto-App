@@ -100,9 +100,9 @@ const Settings = ({
                       {item.label}
                     </Text>
                   )}
-                  <Text style={styles.textConditionLink} onPress={() => onPress(SOFTWARE_LICENSE)} >
+                  {/* <Text style={styles.textConditionLink} onPress={() => onPress(SOFTWARE_LICENSE)} >
                   {StaticText.screen.settings.tabs.software_license}
-                  </Text>
+                  </Text> */}
                 </View>
               </>
             }

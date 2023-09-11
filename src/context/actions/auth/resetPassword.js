@@ -17,6 +17,7 @@ export default ({
     })
 
     let formData = new FormData()
+    //console.log(user_id,'useridddddddd')
     formData.append('new_password', new_password)
     formData.append('confirm_password', confirm_password)
     formData.append('user_id', user_id)

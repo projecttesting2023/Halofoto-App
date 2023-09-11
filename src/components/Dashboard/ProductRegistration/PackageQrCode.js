@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Text, Animated } from 'react-native'
+import { Text, Animated, Alert,Linking } from 'react-native'
 import { BarCodeScanner } from 'expo-barcode-scanner'
 import { useNavigation, useIsFocused } from '@react-navigation/native'
 
@@ -27,13 +27,20 @@ const PackageQrCode = () => {
 
     const getPermissionsAsync = async () => {
         const { status } = await BarCodeScanner.requestPermissionsAsync();
+        //console.log('ooooo', status)
+        if (status == 'denied') {
+            Alert.alert('Warning', 'You need to allow your camera permission to enable scanner.', [
+                { text: 'OK', onPress: () => Linking.openSettings() },
+            ])
+        }
         setHasPermission(status === 'granted');
     }
 
     useEffect(() => {
         isFocused && (
             hideNavigation()(navigationDispatch),
-            hasPermission == null && (
+            hasPermission !== 'granted' && (
+                //console.log('permission ---', hasPermission),
                 getPermissionsAsync(),
                 animateLine()
             ),

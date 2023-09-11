@@ -1,6 +1,7 @@
 import { StatusBar, StyleSheet,Dimensions } from "react-native";
 import Constants from "expo-constants"
 import Colors from "../../../global/Colors";
+import { responsiveFontSize } from "react-native-responsive-dimensions";
 const {height,weight} = Dimensions.get('window')
 
 export default StyleSheet.create({
@@ -240,7 +241,7 @@ export default StyleSheet.create({
     lineHeight: 20,
   },
   textCardSmall: {
-    fontSize: 13.5,
+    fontSize: responsiveFontSize(1.5),
     color: Colors.white,
     fontWeight: "400",
     fontFamily: "Montserrat-Regular",

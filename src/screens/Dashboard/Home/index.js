@@ -19,9 +19,10 @@ import { WARENTY_REGISTRATION_PACKAGE_QR_CODE } from "../../../constants/RouteNa
 import DashboardButtons from "./DashboardButtons"
 import StaticText from "../../../global/StaticText"
 import RoundedCornerGradientStyleBlueFullWidth from "../../Helper/Button/RoundedCornerGradientStyleBlueFullWidth"
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const BannerWidth = Dimensions.get('window').width;
-
+const noOfNotification = 5;
 
 const Home = ({
   loading,
@@ -101,7 +102,7 @@ const Home = ({
               >
                 {data.map((item, index) => {
                   return (
-                    <View style={{ width: screenWidth, height: 210 }}>
+                    <View style={{ width: screenWidth, height: responsiveHeight(25) }}>
                       <Image
                         source={{ uri: item?.banner_image }}
                         style={styles.bannerBg}
@@ -136,7 +137,7 @@ const Home = ({
       </View>
       <View style={styles.tabWrap}>
         {navMenus.length && navMenus.map((item, index) =>
-          <DashboardButtons key={item.name} menu={item} onPress={onPress} />
+          <DashboardButtons key={item.name} menu={item} onPress={onPress} isNewNotification={noOfNotification}/>
         )}
       </View>
       </LinearGradient>

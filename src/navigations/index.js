@@ -61,7 +61,7 @@ const AppNavContainer = () => {
     return () => { }
   }, [isLoggedIn, showGreet, isLoggedOut])
 
-  console.log('isAuthenticated', isAuthenticated)
+  //console.log('isAuthenticated', isAuthenticated)
 
   useEffect(() => {
     (async () => {
