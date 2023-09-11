@@ -114,7 +114,7 @@ export default function Login({
             />
           </View>
         </View>
-        
+        <View style={styles.line}></View>
         <View style={styles.socialMediaLogin}>
           <View style={styles.textWrap}>
             <Text style={styles.textNewAccount}>{StaticText.screen.login.form.qry_new_account}</Text>
@@ -127,7 +127,6 @@ export default function Login({
               </Text>
             </Pressable>
           </View>
-          <View style={styles.line}></View>
           <View style={styles.iconBoxWrap}>
             {/* <Pressable onPress={() => onPress(FACEBOOK_LOGIN)}><Icon icon={"facebook"} wrapperStyle={styles.iconBox} /></Pressable> */}
             <Pressable onPress={() => onPress(GOOGLE_LOGIN)}><Icon icon={"google"} wrapperStyle={styles.iconBox} /></Pressable>
