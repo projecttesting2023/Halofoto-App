@@ -1,11 +1,11 @@
-import { StyleSheet } from "react-native"
+import { Platform, StyleSheet } from "react-native"
 import Colors from "../../../global/Colors"
 
 export default StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: Colors.white,
+        backgroundColor: Platform.OS=="ios"? Colors.white:'',
         alignItems: 'center',
         justifyContent: 'center',
         paddingLeft: 0,
@@ -13,7 +13,7 @@ export default StyleSheet.create({
     },
 
     overlayWrap: {
-        backgroundColor: Colors.black,
+        //backgroundColor: Colors.black,
         height: '100%',
         width: '100%',
         display: 'flex',

@@ -20,6 +20,7 @@ import Colors from "../../../global/Colors"
 import InformationBlue from "../../Helper/SvgImg/InformationBlue"
 import { MY_PRODUCT_DETAILS } from "../../../constants/RouteNames"
 import LinearGradient from 'react-native-linear-gradient';
+import { ScrollView } from "react-native-gesture-handler"
 
 const ReviewDetails = ({
     data,
@@ -63,6 +64,7 @@ const ReviewDetails = ({
                             </Text>
                         </Pressable>
                     </View>
+                    <ScrollView>
                     <View style={styles.contentWrap}>
                         {loading ? (
                             <ActivityIndicator size="large" color={Colors.royal_blue} />
@@ -101,6 +103,7 @@ const ReviewDetails = ({
                             </>
                         )}
                     </View>
+                    </ScrollView>
                 </SafeAreaView>
                 </LinearGradient>
             {/* </ImageBackground> */}

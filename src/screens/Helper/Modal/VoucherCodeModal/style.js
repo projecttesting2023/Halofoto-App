@@ -145,7 +145,7 @@ export default StyleSheet.create({
   codeWrap: {
     height: 270,
     width: "100%",
-    backgroundColor: Colors.black_pearl,
+    backgroundColor: Platform.OS == 'ios'?Colors.jordy_blue:Colors.black_pearl,
     position: 'absolute',
     bottom: 0,
   },

@@ -12,6 +12,7 @@ export default StyleSheet.create({
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
         overflow: 'hidden',
+        backgroundColor: Colors.jordy_blue,
         
     },
     modalBgWrap: {

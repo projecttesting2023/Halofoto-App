@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native"
 import Colors from "../../../../global/Colors"
+import { responsiveWidth } from "react-native-responsive-dimensions"
 
 export default StyleSheet.create({
     error: {
@@ -80,7 +81,8 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         marginTop:-5,
-        marginRight:-10,
+        width:responsiveWidth(25)
+        //marginRight:-10,
     },
     
   inputWrapModal:{

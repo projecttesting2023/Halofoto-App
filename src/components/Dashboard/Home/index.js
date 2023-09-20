@@ -4,6 +4,7 @@ import { useNavigation, useIsFocused } from '@react-navigation/native'
 import { GlobalContext } from '../../../context/Provider'
 import dashboardBanner from '../../../context/actions/dashboard/dashboardBanner'
 import myProfile from '../../../context/actions/dashboard/myProfile'
+import notificationCounter from '../../../context/actions/dashboard/notificationCounter'
 
 import { showNavigation } from '../../../context/actions/common/manageNavigation'
 import HomeScreen from '../../../screens/Dashboard/Home'
@@ -14,6 +15,7 @@ const Home = () => {
   const { dashboardBannerDispatch, dashboardBannerState: { error, loading, data },
     navigationDispatch, navigationState: { display },
     myProfileState: { profileError, profileLoading, profileData },
+    counterDispatch, counterState:{ counterData,counterError,counterLoading},
     myProfileDispatch } = useContext(GlobalContext)
 
   const { navigate, goBack } = useNavigation()
@@ -79,16 +81,18 @@ const Home = () => {
     isFocused && (
       showNavigation()(navigationDispatch),
       myProfile()(myProfileDispatch),
-      dashboardBanner()(dashboardBannerDispatch)
-
+      dashboardBanner()(dashboardBannerDispatch),
+      notificationCounter()(counterDispatch)
     )
   }, [isFocused])
+
+  
 
   const onPress = route => (route == MY_PRODUCT_LIST) ? navigate(route, {
     slideIndex: 0
   }) : navigate(route)
 
-
+  //console.log(counterData,'uuuuuuuu')
   return (
     <HomeScreen
       loading={loading}
@@ -102,6 +106,7 @@ const Home = () => {
       navMenus={navMenus}
       profileLoading={profileLoading}
       profileData={profileData}
+      notificationCount={counterData}
     />
   )
 }

@@ -19,6 +19,7 @@ const CalendarModal = ({
     const MAX_DATE = new Date()
     const [modalView, showModalView] = useState(false)
     const [selectedDate, setSelectedDate] = useState(MAX_DATE)
+
     return (
         <>
             {Platform.OS === 'ios' ?
@@ -71,7 +72,7 @@ const CalendarModal = ({
                 <View style={[style.inputWrapp, error && styles.errorWrap]}>
                     {heading?.length && <Text style={labeStyle}>{heading}</Text>}
                     <View style={[style.input]}>
-                        <Pressable style={[styles.inputWrapp]} onPress={() => showModalView(!modalView)}>
+                        <Pressable style={!!style?.inputWrappCalender?style?.inputWrappCalender:styles.inputWrapp} onPress={() => showModalView(!modalView)}>
                             <Text style={[styles.inputTxt]}>{value}</Text>
                             <Calendar />
                         </Pressable>

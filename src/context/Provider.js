@@ -40,6 +40,7 @@ import voucherDetailsInitialState from './initialState/Dashboard/voucherDetailsI
 import messageListInitialState from './initialState/Dashboard/messageListInitialState'
 import messageListFilterInitialState from './initialState/Dashboard/messageListFilterInitialState'
 import eRepairInitialState from './initialState/Dashboard/eRepairInitialState'
+import counterinitialState from './initialState/Dashboard/counterinitialState.js'
 
 import auth from './reducers/Auth/auth'
 import countryList from './reducers/Common/countryList'
@@ -85,6 +86,7 @@ import messageDetails from './reducers/Dashboard/messageDetails'
 import eRepair from './reducers/Dashboard/eRepair'
 import settingsInitialState from './initialState/Common/settingsInitialState'
 import settings from './reducers/Common/settings'
+import counter from './reducers/Dashboard/counter'
 
 export const GlobalContext = createContext({})
 
@@ -101,6 +103,7 @@ const GlobalProvider = ({ children }) => {
     const [productWarrantyRegisterStepFirstState, productWarrantyRegisterStepFirstDispatch] = useReducer(productWarrantyRegisterStepFirst, productWarrantyRegisterStepFirstInitialState)
     const [productWarrantyRegisterStepSecondState, productWarrantyRegisterStepSecondDispatch] = useReducer(productWarrantyRegisterStepSecond, productWarrantyRegisterStepSecondInitialState)
     const [myProfileState, myProfileDispatch] = useReducer(myProfile, myProfileInitialState)
+    const [counterState, counterDispatch] = useReducer(counter, counterinitialState)
     const [profileUpdateState, profileUpdateDispatch] = useReducer(profileUpdate, profileUpdateInitialState)
     const [profileImageUpdateState, profileImageUpdateDispatch] = useReducer(profileImageUpdate, profileImageUpdateInitialState)
     const [profileManagePasswordState, profileManagePasswordDispatch] = useReducer(profileManagePassword, profileManagePasswordInitialState)
@@ -159,6 +162,7 @@ const GlobalProvider = ({ children }) => {
             reviewListState,
             productReviewSubmitState,
             myProfileState,
+            counterState,
             profileUpdateState,
             profileImageUpdateState,
             profileManagePasswordState,
@@ -201,6 +205,7 @@ const GlobalProvider = ({ children }) => {
             reviewListDispatch,
             productReviewSubmitDispatch,
             myProfileDispatch,
+            counterDispatch,
             profileUpdateDispatch,
             profileImageUpdateDispatch,
             profileManagePasswordDispatch,

@@ -43,10 +43,10 @@ export default function CheckReferrer({
     // >
     <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
       <View style={styles.modalWrap}>
-        <ImageBackground
+        {/* <ImageBackground
           source={isDarkTheme ? AppSettings.background_inner_image_dark : AppSettings.background_image}
           style={styles.modalBgWrap}
-        >
+        > */}
           <SafeAreaView>
             <KeyboardAvoidingView
               behavior={Platform.OS === "ios" ? "padding" : ""}
@@ -109,7 +109,7 @@ export default function CheckReferrer({
               </ScrollView>
             </KeyboardAvoidingView>
           </SafeAreaView>
-        </ImageBackground>
+        {/* </ImageBackground> */}
       </View>
       </LinearGradient>
     // </ImageBackground>

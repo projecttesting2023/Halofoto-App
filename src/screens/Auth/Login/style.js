@@ -6,6 +6,7 @@ const { height, weight } = Dimensions.get('window')
 export default StyleSheet.create({
 
   overlayWrap: {
+    backgroundColor: Colors.black,
     height: height,
     width: weight,
     display: "flex",

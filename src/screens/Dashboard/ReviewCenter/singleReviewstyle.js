@@ -1,5 +1,6 @@
 import { StatusBar, StyleSheet } from "react-native"
 import Colors from "../../../global/Colors"
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   container: {
@@ -124,6 +125,6 @@ export default StyleSheet.create({
 
   buttonWrap: {
     marginTop: 28,
-    height: 43,
+    height: responsiveHeight(8),
   },
 });

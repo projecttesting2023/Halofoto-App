@@ -15,6 +15,7 @@ import News from "../../Helper/SvgImg/News"
 import Message from "../../Helper/SvgImg/Message"
 import HaloStory from "../../Helper/SvgImg/HaloStory"
 import styles from "./style"
+import { responsiveFontSize } from "react-native-responsive-dimensions"
 
 const DashboardButtons = ({
     menu, onPress, isNewNotification
@@ -72,14 +73,15 @@ const DashboardButtons = ({
         <Pressable onPressIn={fadeIn} onPressOut={fadeOut} unstable_pressDelay={100}>
             <Animated.View style={[styles.tabs, { opacity: animated }]}>
                 <CurrentComponent />
+                {menu.label == 'Pesan' ?
+                <View style={{ position: 'absolute', top: 10, right: 25 }}>{isNewNotification != '0'?<Text style={{ color: 'red',fontSize:responsiveFontSize(1) }}>{'\u2B24'}</Text>:null}</View>
+                :
+                null}
                 <Text style={styles.tabButtonText}>
                     {menu.label}
                 </Text>
             </Animated.View>
-            {menu.label == 'Pesan' ?
-                <View style={{ position: 'absolute', top: 0, right: -5 }}><Text style={{ color: 'red' }}>{'\u2B24'}{isNewNotification}</Text></View>
-                :
-                null}
+           
         </Pressable>
     )
 }

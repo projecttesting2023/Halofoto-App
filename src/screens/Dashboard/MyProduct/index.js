@@ -69,8 +69,7 @@ const MyProduct = ({
       > */}
       <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
         <SafeAreaView>
-          <ScrollView>
-          <View style={styles.topHeader}>
+        <View style={styles.topHeader}>
             <Pressable
               style={styles.titleHolder}
               onPress={() => onPress(DASHBOARD)}
@@ -83,6 +82,8 @@ const MyProduct = ({
               </Text>
             </Pressable>
           </View>
+          <ScrollView>
+          
           {!loading && data?.length && (
             <View style={styles.arrowWrap}>
               <Pressable

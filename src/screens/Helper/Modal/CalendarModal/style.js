@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import Colors from "../../../../global/Colors"
-import { responsiveHeight } from "react-native-responsive-dimensions"
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions"
 
 export default StyleSheet.create({
    
@@ -49,6 +49,7 @@ export default StyleSheet.create({
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row',
+        width:responsiveWidth(27)
     },
   
     inputWrappCountryDob: {
@@ -83,6 +84,6 @@ export default StyleSheet.create({
     },
     inputTxt: {
         color: Colors.white,
-        fontSize:16
+        fontSize:16,
     },
 })

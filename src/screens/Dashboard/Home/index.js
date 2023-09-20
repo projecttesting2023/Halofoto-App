@@ -36,6 +36,7 @@ const Home = ({
   navMenus,
   profileLoading,
   profileData,
+  notificationCount
 }) => {
 
 
@@ -137,7 +138,7 @@ const Home = ({
       </View>
       <View style={styles.tabWrap}>
         {navMenus.length && navMenus.map((item, index) =>
-          <DashboardButtons key={item.name} menu={item} onPress={onPress} isNewNotification={noOfNotification}/>
+          <DashboardButtons key={item.name} menu={item} onPress={onPress} isNewNotification={notificationCount}/>
         )}
       </View>
       </LinearGradient>

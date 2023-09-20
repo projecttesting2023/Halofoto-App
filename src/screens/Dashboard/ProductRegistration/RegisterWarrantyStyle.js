@@ -11,6 +11,7 @@ export default StyleSheet.create({
     overlayWrap: {
         height: '100%',
         width: '100%',
+        backgroundColor: Colors.black,
     },
 
     mainWrap: {
@@ -206,6 +207,11 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         position: 'absolute',
-    }
+    },
+    inputWrappCalender: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+    },
 
 });
