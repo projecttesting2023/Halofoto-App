@@ -36,6 +36,8 @@ export default ({
     }
 
     axiosInstance.get(url).then(res => {
+
+        //console.log(res.data?.recent_news,'recent news')
         dispatch({
             type: NEWS_LIST_SUCCESS,
             payload: res.data,

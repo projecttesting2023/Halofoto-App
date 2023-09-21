@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 import GoogleLoginScreen from '../../../screens/Auth/GoogleLogin'
 import { LOGIN } from '../../../constants/RouteNames';
 import env from '../../../config/env'
+import { Alert } from "react-native";
 
 
 const GoogleLogin = () => {
@@ -30,7 +31,8 @@ const GoogleLogin = () => {
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
       await auth().signInWithCredential(googleCredential);
       const fcmToken = await AsyncStorage.getItem("fcm_token")
-      // console.log(user, 'data from google signin')
+       //console.log(user, 'data from google signin')
+       //Alert.alert(JSON.stringify(user))
       let form = {
         email: user?.email,
         name: user?.name,

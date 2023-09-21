@@ -1,7 +1,7 @@
 import { Dimensions, Platform, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import Colors from "../../../global/Colors";
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 
 const {height,width} = Dimensions.get('window')
 
@@ -248,6 +248,7 @@ export default StyleSheet.create({
     width: "100%",
     display: "flex",
     height: 160,
+    width: Platform.OS =='ios'?responsiveWidth(94):responsiveWidth(94)
   },
 
   couponWrapp: {

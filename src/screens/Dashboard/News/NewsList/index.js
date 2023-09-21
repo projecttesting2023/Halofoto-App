@@ -72,7 +72,7 @@ const NewsList = ({
   const listHeader = () => {
     return (
       <>
-        {data?.recent_news?.length && (
+        {data?.recent_news?.length != 0 ?  (
           <View style={styles.newsSlider}>
             <FlatList
               horizontal={true}
@@ -85,9 +85,9 @@ const NewsList = ({
               renderItem={renderRecentNews}
             />
           </View>
-        )}
+        ):null}
 
-        {data?.allCategories?.length && (
+        {data?.allCategories?.length != 0 ? (
           <View style={styles.categorySlider}>
             <FlatList
               horizontal={true}
@@ -100,7 +100,7 @@ const NewsList = ({
               keyExtractor={keyExtractorNewsCategory}
             />
           </View>
-        )}
+        ):null}
       </>
     );
   };

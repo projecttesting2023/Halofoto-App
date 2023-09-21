@@ -470,7 +470,7 @@ const StaticText = {
         resend_otp: `Mengirimkan ulang kode OTP`,
         skip: `Lewati`,
         insert: `Masukkan`,
-        take_photo: `Ambil Gambar`,
+        take_photo: `Ambil Gambar Invoice`,
         download_gallery: `Unduh dari Galeri`,
         send: `Kirim`,
         close: `Tutup`,

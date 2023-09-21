@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "988154087943-6iae0ntv8usb21g826i60jch7f44tubh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.halofoto.halofotoLive",
+            "certificate_hash": "91aef48489fe02278ffd50687c15135a042e482f"
+          }
+        },
+        {
           "client_id": "988154087943-6tq7vp54lf1kks9adi42i6mmk64sl6fs.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
