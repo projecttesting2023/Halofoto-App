@@ -1,5 +1,6 @@
 import { StatusBar, StyleSheet } from 'react-native';
 import Colors from '../../../global/Colors';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
 
 export default StyleSheet.create({
   container: {
@@ -24,7 +25,7 @@ overlayWrap: {
     justifyContent: 'space-between',
     paddingLeft: 20,
     paddingRight: 20,
-    height: 55,
+    height: responsiveHeight(8),
     position:'relative',
     zIndex:2,
   },

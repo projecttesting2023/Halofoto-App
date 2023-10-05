@@ -1,8 +1,8 @@
-import { Platform, StyleSheet, Dimensions} from "react-native"
+import { Platform, StyleSheet, Dimensions } from "react-native"
 import Constants from "expo-constants"
 import Colors from "../../../../global/Colors"
 import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
-const {height,weight} = Dimensions.get('window')
+const { height, weight } = Dimensions.get('window')
 
 export default StyleSheet.create({
   container: {
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 20,
     paddingRight: 20,
-    height: Constants.statusBarHeight + (Platform.OS === 'ios' ? 50 : 60),
+    height: Constants.statusBarHeight + (Platform.OS === 'ios' ? responsiveHeight(10) : 60),
     paddingBottom: Platform.OS === 'ios' ? 20 : 20,
     width: '100%',
 
@@ -103,7 +103,7 @@ export default StyleSheet.create({
 
   mainScroll: {
     height: "100%",
-    paddingBottom:Platform.OS === 'ios' ? 0 : 0
+    paddingBottom: Platform.OS === 'ios' ? 0 : 0
   },
 
   mainBodyWrap: {
@@ -142,7 +142,7 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingTop: 25,
-    paddingRight:responsiveWidth(9)
+    paddingRight: responsiveWidth(9)
   },
   categoryTagWrap: {
     display: 'flex',
@@ -155,7 +155,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     marginTop: 5,
     marginRight: 0,
-    marginBottom:-responsiveHeight(20)
+    marginBottom: Platform.OS == 'ios' ? responsiveHeight(20) : responsiveHeight(15),
   },
   newsCard: {
     borderColor: "rgba(255, 255, 255, 0.2)",
@@ -166,7 +166,7 @@ export default StyleSheet.create({
     display: "flex",
     flexDirection: "column-reverse",
     justifyContent: 'space-between',
-    width: Platform.OS=='ios'?responsiveWidth(45.5):responsiveWidth(45.5),
+    width: Platform.OS == 'ios' ? responsiveWidth(45.5) : responsiveWidth(45.5),
     marginRight: 10,
     height: 350,
 
@@ -256,9 +256,9 @@ export default StyleSheet.create({
   },
   videoWrap: {
     position: 'relative',
-    marginBottom:'5%',
+    marginBottom: '5%',
     //height: '6%',
-    height:responsiveHeight(30),
+    height: responsiveHeight(30),
     width: responsiveWidth(90),
     display: 'flex',
     flexDirection: 'row',
@@ -268,6 +268,6 @@ export default StyleSheet.create({
   skeletonWrap: {
     position: 'absolute',
     opacity: 0.6,
-    zIndex:1,
+    zIndex: 1,
   }
 });

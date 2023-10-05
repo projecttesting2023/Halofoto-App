@@ -26,7 +26,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 20,
     paddingRight: 20,
-    height:Constants.statusBarHeight+(Platform.OS === 'ios' ? 0 : 60),
+    height:Constants.statusBarHeight+(Platform.OS === 'ios' ? 60 : 60),
     paddingBottom:Platform.OS === 'ios' ? 20 : 20,
     width:'100%',
   },

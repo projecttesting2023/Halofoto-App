@@ -1,6 +1,7 @@
 import { Platform, StyleSheet } from "react-native";
 import Constants from "expo-constants";
 import Colors from "../../../../global/Colors";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 export default StyleSheet.create({
   container: {
@@ -29,7 +30,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     paddingLeft: 20,
     paddingRight: 20,
-    height: Constants.statusBarHeight + (Platform.OS === "ios" ? 50 : 140),
+    height: Constants.statusBarHeight + (Platform.OS === "ios" ? responsiveHeight(10) : 140),
     paddingBottom: Platform.OS === "ios" ? 20 : 20,
     width: "100%",
   },

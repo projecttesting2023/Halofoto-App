@@ -8,6 +8,7 @@ import {
   useWindowDimensions,
   Dimensions,
   Button,
+  SafeAreaView,
 } from "react-native"
 import { useCallback, useRef, useState } from "react"
 import { ScrollView } from "react-native-gesture-handler"
@@ -74,6 +75,7 @@ const NewsDetails = ({
         source={AppSettings.background_inner_image_dark}
       > */}
       <LinearGradient colors={['#284369', '#162B4D', '#1C387E', '#051434']} style={styles.overlayWrap}>
+        <SafeAreaView>
         <AnimatedHeader
           label={StaticText.screen.news_details.heading}
           // yAxisValue={yAxisValue}
@@ -194,7 +196,7 @@ const NewsDetails = ({
 
 
 
-                <View style={{ marginBottom: 14, justifyContent: 'center', alignItems: 'center', paddingRight: responsiveWidth(10) }}>
+                <View style={{ marginBottom: 14, justifyContent: 'center', alignItems: 'center',  }}>
                   <RenderHtml
                     contentWidth={width}
                     source={newsDetails}
@@ -226,6 +228,7 @@ const NewsDetails = ({
               </>}
           </View>
         </ScrollView>
+        </SafeAreaView>
       </LinearGradient>
       {/* </ImageBackground> */}
     </View >
