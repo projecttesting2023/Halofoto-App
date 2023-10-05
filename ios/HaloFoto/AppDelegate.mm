@@ -1,5 +1,6 @@
 #import "AppDelegate.h"
 #import <Firebase.h>
+#import "Orientation.h" //add this line
 #import <React/RCTBundleURLProvider.h>
 
 @implementation AppDelegate
@@ -14,6 +15,10 @@
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
+
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+  return [Orientation getOrientation];
+}//add this line
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
 {

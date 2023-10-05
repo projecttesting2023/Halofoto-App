@@ -6,6 +6,7 @@ import { showNavigation } from "../../../context/actions/common/manageNavigation
 import ProductCatalogScreen from "../../../screens/Dashboard/ProductCatalog"
 import productListFilter from "../../../context/actions/dashboard/productListFilter"
 
+
 const ProductCatalog = () => {
   const {
     productListState: { error, loading, data },
@@ -28,6 +29,8 @@ const ProductCatalog = () => {
   const onPress = (route, params) =>
     route ? navigate(route, params) : goBack()
   const isFocused = useIsFocused()
+
+  
 
   useEffect(() => {
     isFocused &&

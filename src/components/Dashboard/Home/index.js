@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Dimensions } from "react-native"
+import { Dimensions, Platform } from "react-native"
 import { useNavigation, useIsFocused } from '@react-navigation/native'
 import { GlobalContext } from '../../../context/Provider'
 import dashboardBanner from '../../../context/actions/dashboard/dashboardBanner'
 import myProfile from '../../../context/actions/dashboard/myProfile'
 import notificationCounter from '../../../context/actions/dashboard/notificationCounter'
+import Orientation from 'react-native-orientation-locker';
 
 import { showNavigation } from '../../../context/actions/common/manageNavigation'
 import HomeScreen from '../../../screens/Dashboard/Home'
@@ -77,6 +78,7 @@ const Home = () => {
     }
   ]
 
+
   useEffect(() => {
     isFocused && (
       showNavigation()(navigationDispatch),
@@ -86,7 +88,11 @@ const Home = () => {
     )
   }, [isFocused])
 
-  
+  useEffect(()=>{
+    if(Platform.OS == 'ios'){
+      Orientation.lockToPortrait();
+    }
+  },[])
 
   const onPress = route => (route == MY_PRODUCT_LIST) ? navigate(route, {
     slideIndex: 0

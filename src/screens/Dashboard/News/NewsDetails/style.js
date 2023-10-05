@@ -257,8 +257,9 @@ export default StyleSheet.create({
   videoWrap: {
     position: 'relative',
     marginBottom:'5%',
-    height: '6%',
-    width: '100%',
+    //height: '6%',
+    height:responsiveHeight(30),
+    width: responsiveWidth(90),
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',

@@ -21,6 +21,7 @@ import RecentNews from "./RecentNews"
 import AnimatedHeader from "../../../Helper/AnimatedHeader"
 import styles from "./style"
 import { Video } from 'expo-av'
+import YoutubePlayer from "react-native-youtube-iframe"
 import { responsiveWidth } from "react-native-responsive-dimensions"
 
 const NewsDetails = ({
@@ -129,43 +130,45 @@ const NewsDetails = ({
                       <SkeletonPlaceholder.Item width={width} height={200} borderRadius={20} />
                     </SkeletonPlaceholder.Item>
                   </SkeletonPlaceholder>} */}
-                {!!data?.news?.video_link_1 &&
+                
+                {!!data?.news?.video_link_1 && data?.news?.video_link_1.match(/dyntube/) &&
                   <View style={styles.videoWrap}>
                     {(videoFirstLoader) &&
                       <View style={styles.skeletonWrap}>
                         <SkeletonPlaceholder >
                           <SkeletonPlaceholder.Item flexDirection="row" alignItems="center">
-                            <SkeletonPlaceholder.Item width={width * 0.88} height={195} />
+                            <SkeletonPlaceholder.Item width={responsiveWidth(88)} height={195} />
                           </SkeletonPlaceholder.Item>
                         </SkeletonPlaceholder>
                       </View>
                     }
 
+                    
 
-                    <Video
-                      ref={video}
-                      source={{
-                        uri: data?.news?.video_link_1,
-                      }}
-                      // shouldPlay={showModal}
-                      rate={1.0}
-                      volume={1.0}
-                      resizeMode="contain"
-                      useNativeControls
-                      style={styles.cardWrap}
-                      onLoad={() => showVideoFirstLoader(false)}
-                      onLoadStart={() => showVideoFirstLoader(true)}
-                    />
+                      <Video
+                        ref={video}
+                        source={{
+                          uri: data?.news?.video_link_1,
+                        }}
+                        //shouldPlay={true}
+                        rate={1.0}
+                        volume={1.0}
+                        resizeMode="contain"
+                        useNativeControls
+                        style={styles.cardWrap}
+                        onLoad={() => showVideoFirstLoader(false)}
+                        onLoadStart={() => showVideoFirstLoader(true)}
+                      />
                   </View>}
 
                 {
-                  !!data?.news?.video_link_2 && 
+                  !!data?.news?.video_link_2  && data?.news?.video_link_2.match(/dyntube/) &&
                   <View style={styles.videoWrap}>
                     {(videoSecLoader) &&
                       <View style={styles.skeletonWrap}>
                         <SkeletonPlaceholder >
                           <SkeletonPlaceholder.Item flexDirection="row" alignItems="center">
-                            <SkeletonPlaceholder.Item width={width * 0.88} height={195} />
+                            <SkeletonPlaceholder.Item width={responsiveWidth(88)} height={195} />
                           </SkeletonPlaceholder.Item>
                         </SkeletonPlaceholder>
                       </View>
@@ -191,7 +194,7 @@ const NewsDetails = ({
 
 
 
-                <View style={{ marginBottom: 14,justifyContent:'center',alignItems:'center',paddingRight:responsiveWidth(10) }}>
+                <View style={{ marginBottom: 14, justifyContent: 'center', alignItems: 'center', paddingRight: responsiveWidth(10) }}>
                   <RenderHtml
                     contentWidth={width}
                     source={newsDetails}
@@ -223,7 +226,7 @@ const NewsDetails = ({
               </>}
           </View>
         </ScrollView>
-        </LinearGradient>
+      </LinearGradient>
       {/* </ImageBackground> */}
     </View >
   )
