@@ -17,9 +17,9 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9E9B66B322BA04246FD8D571 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13FB2F632D836C60DF7EC2 /* ExpoModulesProvider.swift */; };
 		B1B195EEBCD947D29B171F58 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77767EB28F524E95A5A143A0 /* SplashScreen.storyboard */; };
-		CE3B66A42ACEC10D00898DC9 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = CE3B66A32ACEC10D00898DC9 /* assets */; };
-		CE3B66A62ACEC11600898DC9 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = CE3B66A52ACEC11600898DC9 /* main.jsbundle */; };
 		CEB2E5F02AA99ABB00D0CB36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEB2E5EF2AA99ABB00D0CB36 /* GoogleService-Info.plist */; };
+		CEFE85FE2AED21DB00963574 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = CEFE85FD2AED21DB00963574 /* assets */; };
+		CEFE86002AED21E600963574 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = CEFE85FF2AED21E600963574 /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +54,8 @@
 		CE13B0982A8E372F004A91F3 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CE2B026A2AB9DE3600CDE33C /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = assets/src/assets/Images; sourceTree = "<group>"; };
 		CE2B026C2AB9E0F100CDE33C /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../src/assets/Images; sourceTree = "<group>"; };
+		CE3709CF2ACED13700A611DA /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		CE3709D12ACED13F00A611DA /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CE3B669B2ACE9D1200898DC9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		CE3B669D2ACE9D1900898DC9 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CE3B669F2ACEA82400898DC9 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
@@ -73,6 +75,8 @@
 		CEE2182F2ABAD072002A888E /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = HaloFoto/assets/assets/src/assets/Images; sourceTree = "<group>"; };
 		CEE218312ABAD202002A888E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		CEE218332ABAD214002A888E /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
+		CEFE85FD2AED21DB00963574 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		CEFE85FF2AED21E600963574 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CEFF5E5A2A3B3489006FB004 /* HaloFoto.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HaloFoto.entitlements; path = HaloFoto/HaloFoto.entitlements; sourceTree = "<group>"; };
 		CEFF5E5B2A3B3C8C006FB004 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D90F35DB7DB5CF4603D96A90 /* Pods_HaloFoto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HaloFoto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +181,10 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CEFE85FF2AED21E600963574 /* main.jsbundle */,
+				CEFE85FD2AED21DB00963574 /* assets */,
+				CE3709D12ACED13F00A611DA /* main.jsbundle */,
+				CE3709CF2ACED13700A611DA /* assets */,
 				CE3B66A52ACEC11600898DC9 /* main.jsbundle */,
 				CE3B66A32ACEC10D00898DC9 /* assets */,
 				CE3B66A12ACEA82C00898DC9 /* main.jsbundle */,
@@ -327,8 +335,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE3B66A62ACEC11600898DC9 /* main.jsbundle in Resources */,
-				CE3B66A42ACEC10D00898DC9 /* assets in Resources */,
+				CEFE86002AED21E600963574 /* main.jsbundle in Resources */,
+				CEFE85FE2AED21DB00963574 /* assets in Resources */,
 				CEB2E5F02AA99ABB00D0CB36 /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -602,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.12;
+				MARKETING_VERSION = 1.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -637,7 +645,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.12;
+				MARKETING_VERSION = 1.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

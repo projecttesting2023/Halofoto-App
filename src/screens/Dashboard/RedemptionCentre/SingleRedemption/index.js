@@ -10,6 +10,7 @@ import {
   ScrollView,
   ActivityIndicator,
   useWindowDimensions,
+  Alert,
 } from "react-native";
 
 import RenderHtml from "react-native-render-html";
@@ -22,6 +23,7 @@ import AnimatedHeader from "../../../Helper/AnimatedHeader";
 import Colors from "../../../../global/Colors";
 import RoundedCornerGradientStyleBlueFullWidth from "../../../Helper/Button/RoundedCornerGradientStyleBlueFullWidth";
 import TickGreen from "../../../Helper/SvgImg/TickGreen";
+import { MY_PROFILE_MANAGE,MY_PROFILE } from "../../../../constants/RouteNames";
 
 const SingleRedemption = ({
   data,
@@ -31,6 +33,7 @@ const SingleRedemption = ({
   reedemVoucherLoading,
   reedemVoucherData,
 }) => {
+console.log(data,'dtatadatadtata')
   const { width } = useWindowDimensions();
   const contentDetails = {
     html: `<div style="color:white;word-wrap:break-word;font-size:18px;font-weight:400;">${
@@ -39,6 +42,25 @@ const SingleRedemption = ({
         : ``
     }</div>`,
   };
+
+  const checkbefore = (id,status) =>{
+    console.log(id)
+    console.log(status)
+    //onSubmit(id)
+    if(status == false){
+      Alert.alert('', 'Mohon Pastikan Kamu Sudah Memasukkan Nomor Telpon dan Alamat Yang Benar', [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => onPress(MY_PROFILE_MANAGE)},
+      ])
+    }else{
+      onSubmit(id)
+    }
+  }
+
   return (
     <>
       <View style={styles.container}>
@@ -158,7 +180,7 @@ const SingleRedemption = ({
                         enableExperimentalMarginCollapsing={true}
                       />
                     </View>
-
+            
                     {reedemVoucherData?.message?.length ? (
                       <>
                         {reedemVoucherData?.message?.length && (
@@ -184,7 +206,7 @@ const SingleRedemption = ({
                           <View style={styles.uploadButtonWrap}>
                             <RoundedCornerGradientStyleBlueFullWidth
                               onPress={() =>
-                                onSubmit(data?.voucher_details?.id)
+                                checkbefore(data?.voucher_details?.id,data?.address_status)
                               }
                               label={StaticText.button.change_point}
                               disabled={loading}

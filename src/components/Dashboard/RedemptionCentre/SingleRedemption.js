@@ -38,7 +38,10 @@ const SingleRedemption = ({ route, navigation }) => {
         redemptionCentreDetail(voucherId)(redemptionCentreDetailDispatch)
     }, [])
 
-    const onPress = routes => routes ? navigation.navigate(routes) : navigation.goBack()
+    const onPress = routes => {
+        //console.log(routes,'iiiiiiiiiii')
+        routes ? navigation.navigate(routes) : navigation.goBack()
+    }
 
     const onSubmit = param => {
         reedemVoucher(param,1)(reedemVoucherDispatch)
