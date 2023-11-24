@@ -18,8 +18,8 @@
 		9E9B66B322BA04246FD8D571 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13FB2F632D836C60DF7EC2 /* ExpoModulesProvider.swift */; };
 		B1B195EEBCD947D29B171F58 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77767EB28F524E95A5A143A0 /* SplashScreen.storyboard */; };
 		CEB2E5F02AA99ABB00D0CB36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEB2E5EF2AA99ABB00D0CB36 /* GoogleService-Info.plist */; };
-		CEFE85FE2AED21DB00963574 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = CEFE85FD2AED21DB00963574 /* assets */; };
-		CEFE86002AED21E600963574 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = CEFE85FF2AED21E600963574 /* main.jsbundle */; };
+		CECE65522B0F34080040AAB4 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = CECE65502B0F34080040AAB4 /* assets */; };
+		CECE65532B0F34080040AAB4 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = CECE65512B0F34080040AAB4 /* main.jsbundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +67,8 @@
 		CE82A6222ABC57A100300C20 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		CE82A6232ABC57A100300C20 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CEB2E5EF2AA99ABB00D0CB36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "HaloFoto/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CECE65502B0F34080040AAB4 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		CECE65512B0F34080040AAB4 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CEE218252ABABDEB002A888E /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		CEE218272ABAC120002A888E /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.jsbundle; path = HaloFoto/main.jsbundle; sourceTree = "<group>"; };
 		CEE218292ABAC6F7002A888E /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = HaloFoto/assets; sourceTree = "<group>"; };
@@ -197,6 +199,8 @@
 				CE82A6232ABC57A100300C20 /* main.jsbundle */,
 				CE4F969C2ACD9BD70096C861 /* assets */,
 				CE4F969D2ACD9BD70096C861 /* main.jsbundle */,
+				CECE65502B0F34080040AAB4 /* assets */,
+				CECE65512B0F34080040AAB4 /* main.jsbundle */,
 				CEE2182F2ABAD072002A888E /* Images */,
 				CEE218292ABAC6F7002A888E /* assets */,
 				CEE2182C2ABAC999002A888E /* assets */,
@@ -335,8 +339,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEFE86002AED21E600963574 /* main.jsbundle in Resources */,
-				CEFE85FE2AED21DB00963574 /* assets in Resources */,
+				CECE65522B0F34080040AAB4 /* assets in Resources */,
+				CECE65532B0F34080040AAB4 /* main.jsbundle in Resources */,
 				CEB2E5F02AA99ABB00D0CB36 /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
@@ -600,7 +604,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HaloFoto/HaloFoto.entitlements;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = F9937XGZ5Y;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = HaloFoto/Info.plist;
@@ -610,7 +615,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.14;
+				MARKETING_VERSION = 1.21;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -635,7 +640,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F9937XGZ5Y;
 				INFOPLIST_FILE = HaloFoto/Info.plist;
@@ -645,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.14;
+				MARKETING_VERSION = 1.21;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

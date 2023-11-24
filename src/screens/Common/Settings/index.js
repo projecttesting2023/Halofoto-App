@@ -14,7 +14,7 @@ import AppSettings from "../../../global/AppSettings"
 import StaticText from "../../../global/StaticText"
 import styles from "./style"
 import LinearGradient from 'react-native-linear-gradient';
-
+import env from '../../../config/env'
 import { DASHBOARD, LOGIN, SOFTWARE_LICENSE } from "../../../constants/RouteNames"
 import BackBtn from "../../Helper/SvgImg/BackBtn"
 import CheckBox from "../../Helper/SvgImg/CheckBox"
@@ -66,33 +66,36 @@ const Settings = ({
               <Text style={styles.textLinkSmall} onPress={() => Linking.openSettings()}>
                 {StaticText.screen.settings.notification_txt}
               </Text>
+              <Text style={styles.textLink} onPress={() => Linking.openURL(`${env.WEB_URL}/remove-account`)}>
+                {StaticText.screen.my_profile.content.delete}
+              </Text>
             </View>
 
             {isLoggedIn &&
               <>
-              {Platform.OS === 'android' ? 
-                <View style={styles.tuneWrap}>
-                  <Text style={styles.textHeadingDropDown}>
-                    {StaticText.screen.settings.tabs.sound}
-                  </Text>
-                  {!!songs && songs.length && !trackLoading && songs.map(song =>
-                    <Pressable
-                      style={styles.checkBoxWrap}
-                      onPress={() => previewNotification(song)}
-                      key={song.id}
-                    >
-                      {!!currentNotificationSound && currentNotificationSound == song?.sound ?
-                        <CheckBoxTick stroke={Colors.white} />
-                        :
-                        <CheckBox stroke={Colors.white} />
-                      }
-                      <Text style={styles.textCategory}>{song?.title}</Text>
-                    </Pressable>
-                  )}
-                </View>:
-                <Pressable onPress={()=>Linking.openSettings()}>
-                  <Text style={[styles.textConditionLink,{marginLeft:20}]}>Settings</Text>
-                </Pressable>
+                {Platform.OS === 'android' ?
+                  <View style={styles.tuneWrap}>
+                    <Text style={styles.textHeadingDropDown}>
+                      {StaticText.screen.settings.tabs.sound}
+                    </Text>
+                    {!!songs && songs.length && !trackLoading && songs.map(song =>
+                      <Pressable
+                        style={styles.checkBoxWrap}
+                        onPress={() => previewNotification(song)}
+                        key={song.id}
+                      >
+                        {!!currentNotificationSound && currentNotificationSound == song?.sound ?
+                          <CheckBoxTick stroke={Colors.white} />
+                          :
+                          <CheckBox stroke={Colors.white} />
+                        }
+                        <Text style={styles.textCategory}>{song?.title}</Text>
+                      </Pressable>
+                    )}
+                  </View> :
+                  <Pressable onPress={() => Linking.openSettings()}>
+                    <Text style={[styles.textConditionLink, { marginLeft: 20 }]}>Settings</Text>
+                  </Pressable>
                 }
                 <View style={styles.conditionWrap} >
                   {navMenus.length && navMenus.map((item, index) =>
@@ -108,7 +111,7 @@ const Settings = ({
             }
           </ScrollView>
         </SafeAreaView>
-        </LinearGradient>
+      </LinearGradient>
       {/* </ImageBackground> */}
     </Container>
   )

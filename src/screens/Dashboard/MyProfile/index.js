@@ -237,6 +237,7 @@ const MyProfile = ({
                       }}
                       onPress={onSignOut}
                     />
+                   
                   </View>
                 </View>
               </>

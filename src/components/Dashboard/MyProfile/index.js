@@ -8,7 +8,8 @@ import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import appleAuth from '@invertase/react-native-apple-authentication';
 import AsyncStorage from "@react-native-async-storage/async-storage"
-
+import env from '../../../config/env'
+import { Linking } from 'react-native'
 import { GlobalContext } from "../../../context/Provider"
 import MyProfileScreen from "../../../screens/Dashboard/MyProfile"
 import myProfile from "../../../context/actions/dashboard/myProfile"
@@ -61,6 +62,18 @@ const MyProfile = () => {
     Alert.alert(StaticText.screen.logout.heading)
   }
 
+  // const onDeletee = async () => {
+  //   console.log(`${env.WEB_URL}/remove-account`)
+  //   const uri = `${env.WEB_URL}/remove-account`;
+  //   const supported = await Linking.canOpenURL(uri);
+  //   if (supported) {
+  //     await Linking.openURL(uri);
+  //   } else {
+  //     await Linking.openURL(uri);
+  //   }
+
+  // }
+
   const onShare = async () => {
     try {
       const result = await Share.share({
@@ -102,7 +115,7 @@ const MyProfile = () => {
       }
     })
 
-    
+
 
     if (value?.size > MAX_FILE_UPLOAD_SIZE) {
       setErrors((prev) => {
@@ -167,17 +180,17 @@ const MyProfile = () => {
     let result = await DocumentPicker.getDocumentAsync({
       type: "image/*",
     })
-     //console.log('profile picture', result)
-     if(result?.mimeType == "image/jpeg" || result?.mimeType == "image/png"){
-        if (result?.name && result.name != "" && result?.size) {
-          onChange({ name: "profile_image", value: result })
-        }
-     }else{
+    //console.log('profile picture', result)
+    if (result?.mimeType == "image/jpeg" || result?.mimeType == "image/png") {
+      if (result?.name && result.name != "" && result?.size) {
+        onChange({ name: "profile_image", value: result })
+      }
+    } else {
       Alert.alert('Warring', 'You need to use JPEG or PNG file', [
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
       ])
-     }
-    
+    }
+
   }
 
   return (
@@ -190,6 +203,7 @@ const MyProfile = () => {
       profileImageLoad={profileImageLoading}
       copyToClipboard={copyToClipboard}
       onSignOut={onSignOut}
+      
     />
   )
 }

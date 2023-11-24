@@ -314,7 +314,8 @@ const StaticText = {
                 invite_friend: `Undang Teman`,
                 logout: `Keluar`,
                 download_helofoto: `Unduh HaloFoto`,
-                referral_code: `Kode Referal`
+                referral_code: `Kode Referal`,
+                delete: `Hapus akun`
             }
         },
         my_profile_detail: {
