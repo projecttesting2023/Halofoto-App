@@ -30,7 +30,10 @@ const PackageQrCode = () => {
         //console.log('ooooo', status)
         if (status == 'denied') {
             Alert.alert('Warning', 'You need to allow your camera permission to enable scanner.', [
-                { text: 'OK', onPress: () => Linking.openSettings() },
+                { text: 'OK', onPress: () => {
+                    Linking.openSettings()
+                    goBack()
+                } },
             ])
         }
         setHasPermission(status === 'granted');

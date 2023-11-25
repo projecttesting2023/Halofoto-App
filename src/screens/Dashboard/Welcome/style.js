@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import Colors from "../../../global/Colors";
 
 export default StyleSheet.create({
@@ -44,7 +44,7 @@ export default StyleSheet.create({
   textContentWrap: {
     display: "flex",
     justifyContent: "center",
-    alignItems:'center'
+    alignItems: 'center'
   },
   buttonWrap: {
     display: "flex",
@@ -63,45 +63,45 @@ export default StyleSheet.create({
     fontWeight: "700",
   },
   uploadButtonWrap: {
-    width:370, 
+    width: 370,
     display: "flex",
     justifyContent: "center",
-    marginTop:50
+    marginTop: Platform.OS == 'android' ? 50 : 0,
   },
   text: {
     color: Colors.white,
     paddingTop: 50,
     fontSize: 18,
     fontWeight: '400',
-    fontFamily:'Montserrat-Regular',
-    color:Colors.white ,
-    textAlign:'center',
-    lineHeight:29,
+    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    textAlign: 'center',
+    lineHeight: 29,
   },
-  text1:{
+  text1: {
     fontSize: 18,
     fontWeight: '400',
-    fontFamily:'Montserrat-Regular',
-    color:Colors.white ,
-    textAlign:'center',
-    lineHeight:29,
-    textAlign:"center"
+    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    textAlign: 'center',
+    lineHeight: 29,
+    textAlign: "center"
   },
   textSize: {
     paddingTop: 50,
     fontSize: 40,
     fontWeight: '300',
-    fontFamily:'Montserrat-Regular',
-    color:Colors.white ,
-    width:376 ,
-    textAlign:'center'
+    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    width: 376,
+    textAlign: 'center'
   },
-  textPointsSize:{
+  textPointsSize: {
     paddingTop: 50,
     fontSize: 40,
     fontWeight: '600',
-    lineHeight:49,
-    fontFamily:'Montserrat-Regular',
-    color:Colors.white,
+    lineHeight: 49,
+    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
   }
 });
