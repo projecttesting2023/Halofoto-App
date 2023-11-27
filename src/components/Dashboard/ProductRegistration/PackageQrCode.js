@@ -29,11 +29,16 @@ const PackageQrCode = () => {
         const { status } = await BarCodeScanner.requestPermissionsAsync();
         //console.log('ooooo', status)
         if (status == 'denied') {
-            Alert.alert('Warning', 'You need to allow your camera permission to enable scanner.', [
+            Alert.alert('Warning', `You need to allow your camera permission to enable scanner.We are using a barcode reader to obtain user product information and validate the authenticity of the user's product by cross-referencing it with our database records before approving the product via an automated registered process.`, [
                 { text: 'OK', onPress: () => {
                     Linking.openSettings()
                     goBack()
                 } },
+                {
+                    text: 'Cancel',
+                    onPress: () => goBack(),
+                    style: 'cancel',
+                  },
             ])
         }
         setHasPermission(status === 'granted');
