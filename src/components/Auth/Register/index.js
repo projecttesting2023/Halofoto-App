@@ -119,11 +119,11 @@ const Register = () => {
         return { ...prev, password: StaticText.alert.error }
       })
     }
-    if (!form.dob) {
-      setErrors((prev) => {
-        return { ...prev, dob: StaticText.alert.error }
-      })
-    }
+    // if (!form.dob) {
+    //   setErrors((prev) => {
+    //     return { ...prev, dob: StaticText.alert.error }
+    //   })
+    // }
     if (!form.phone_country_code?.ext_code) {
       setErrors((prev) => {
         return { ...prev, phone_country_code: StaticText.alert.error }
@@ -154,11 +154,11 @@ const Register = () => {
         return { ...prev, address_line1: StaticText.alert.error }
       })
     }
-    if (!form.gender) {
-      setErrors((prev) => {
-        return { ...prev, gender: StaticText.alert.error }
-      })
-    }
+    // if (!form.gender) {
+    //   setErrors((prev) => {
+    //     return { ...prev, gender: StaticText.alert.error }
+    //   })
+    // }
     
     if (
       Object.values(form).length >= 9 &&
