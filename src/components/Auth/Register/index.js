@@ -161,7 +161,7 @@ const Register = () => {
     // }
     
     if (
-      Object.values(form).length >= 9 &&
+      Object.values(form).length >= 7 &&
       //&& Object.values(form).every(item => item || item?.trim()?.length > 0)
       Object.values(errors).every((item) => !item)
     ) {

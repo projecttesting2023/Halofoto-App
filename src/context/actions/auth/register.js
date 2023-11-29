@@ -27,7 +27,6 @@ export default ({
     dispatch({
         type: REGISTER_LOADING
     })
-
     let formData = new FormData()
     formData.append('name', name)
     formData.append('email', email)
@@ -36,7 +35,12 @@ export default ({
     formData.append('phone', phone)
     formData.append('phone_code', phone_country_code?.ext_code)
     formData.append('gender', gender)
-    formData.append('dob', dob)
+    if (!dob) {
+        formData.append('dob', '')
+    } else {
+        formData.append('dob', dob)
+    }
+
     formData.append('address_line1', address_line1)
     formData.append('country_id', country?.id)
     formData.append('state', typeof state?.name !== 'undefined' ? state?.name : '')
@@ -44,12 +48,13 @@ export default ({
     formData.append('insta_id', typeof insta_id !== 'undefined' ? insta_id : '')
     formData.append('tamron_user', typeof tamron_user !== 'undefined' ? tamron_user : false)
     formData.append('notification_token', fcmToken)
-  
+
+    console.log(dob, 'xxxxxxxxxxxxmmmmmmmxmxmxmxmxm')
 
     axiosInstance.post('/mobile/user-register', formData).then(res => {
         AsyncStorage.removeItem("user")
         AsyncStorage.removeItem("token")
-        AsyncStorage.removeItem("is_referred") 
+        AsyncStorage.removeItem("is_referred")
         AsyncStorage.setItem("show_welcome", '0')
         AsyncStorage.setItem("is_referred", 'pending')
         AsyncStorage.setItem("token", res.data.token)

@@ -28,7 +28,12 @@ export default ({
     formData.append('phone', phone)
     formData.append('phone_code', phone_country_code?.ext_code)
     formData.append('gender', gender)
-    formData.append('dob', dob)
+    console.log(dob,'kjkjkjkhjhjhggthgggtghgggg')
+    if (!dob) {
+        formData.append('dob', '')
+    } else {
+        formData.append('dob', dob)
+    }
     formData.append('address_line1', address_line1)
     formData.append('country_id', country?.id)
     formData.append('state', typeof state?.name !== 'undefined' ? state?.name : '')
