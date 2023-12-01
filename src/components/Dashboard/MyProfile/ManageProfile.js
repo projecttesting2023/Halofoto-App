@@ -123,7 +123,8 @@ const ManageProfile = () => {
 
     const onChange = ({ name, value }) => {
         // console.log(value.uri,'image uri from file upload')
-        // console.log(name)
+        console.log(name)
+        //  console.log(value)
         if (name == 'profile_image') {
             setForm((form) => {
                 return {
@@ -148,21 +149,25 @@ const ManageProfile = () => {
             Toast.show(StaticText.alert.upload_limit_error)
         }
         else if (value !== "") {
-            manageProfileImage({
-                value
-            })(profileImageUpdateDispatch)((response) => {
-                Toast.show(StaticText.alert.record_update_success)
-            })
+            if (name == 'profile_image') {
+                manageProfileImage({
+                    value
+                })(profileImageUpdateDispatch)((response) => {
+                    Toast.show(StaticText.alert.record_update_success)
+                })
+            }
 
             if (name == "phone_country_code" && !value?.ext_code) {
                 setErrors((prev) => {
                     return { ...prev, [name]: StaticText.alert.error_phone_ext_length }
                 })
             } else if (name == "country" && !value?.id) {
+                //console.log('11111111')
                 setErrors((prev) => {
                     return { ...prev, [name]: StaticText.alert.error }
                 })
             } else {
+                //console.log('23333333')
                 setErrors((prev) => {
                     return { ...prev, [name]: null }
                 })

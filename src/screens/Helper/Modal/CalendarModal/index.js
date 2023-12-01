@@ -19,6 +19,14 @@ const CalendarModal = ({
     const MAX_DATE = new Date()
     const [modalView, showModalView] = useState(false)
     const [selectedDate, setSelectedDate] = useState(MAX_DATE)
+    console.log(value, 'tttttttt')
+    if (!!value) {
+        const date1 = value.split('-')
+        if (date1[0].length > 2) {
+            value = date1[2] + '-' + date1[1] + '-' + date1[0]
+        }
+        console.log(value, 'uuuuuuuu')
+    }
 
     return (
         <>
@@ -45,8 +53,10 @@ const CalendarModal = ({
                                     minimumDate={MIN_DATE}
                                     maximumDate={MAX_DATE}
                                     onChange={(event, selectedDate) => {
-                                        setSelectedDate(selectedDate)
-                                        event.type == 'set' && onSelect(moment(selectedDate).format("DD-MM-YYYY"))
+                                        // console.log(moment(selectedDate).format("DD-MM-YYYY"),'fgfg')
+                                         setSelectedDate(selectedDate)                                                       
+                                         event.type == 'set' && onSelect(moment(selectedDate).format("DD-MM-YYYY"))
+                    
                                     }}
                                 />
                             </View>
@@ -72,7 +82,7 @@ const CalendarModal = ({
                 <View style={[style.inputWrapp, error && styles.errorWrap]}>
                     {heading?.length && <Text style={labeStyle}>{heading}</Text>}
                     <View style={[style.input]}>
-                        <Pressable style={!!style?.inputWrappCalender?style?.inputWrappCalender:styles.inputWrapp} onPress={() => showModalView(!modalView)}>
+                        <Pressable style={!!style?.inputWrappCalender ? style?.inputWrappCalender : styles.inputWrapp} onPress={() => showModalView(!modalView)}>
                             <Text style={[styles.inputTxt]}>{value}</Text>
                             <Calendar />
                         </Pressable>

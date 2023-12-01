@@ -2,6 +2,7 @@ import { MY_PROFILE_UPDATE_SUCCESS, MY_PROFILE_UPDATE_LOADING, MY_PROFILE_UPDATE
 import axiosInstance from "../../../helpers/axiosInterceptor"
 import StaticText from "../../../global/StaticText"
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import moment from "moment"
 
 export default ({
     name,
@@ -41,6 +42,8 @@ export default ({
     formData.append('insta_id', typeof insta_id !== 'undefined' ? insta_id : '')
     formData.append('tamron_user', typeof tamron_user !== 'undefined' ? tamron_user : false)
 
+    console.log(formData)
+
     if (profile_image?.uri) {
         formData.append('profile_image', { uri: profile_image?.uri, name: profile_image?.name, type: profile_image?.mimeType })
     }
@@ -53,11 +56,13 @@ export default ({
             payload: res.data,
         })
         onSuccess(res.data)
+        console.log(res.data)
     }).catch(err => {
     
         dispatch({
             type: MY_PROFILE_UPDATE_FAIL,
             payload: err.response ? err.response.data : { error: StaticText.axios.error }
         })
+        console.log('error',err.response.data)
     })
 }

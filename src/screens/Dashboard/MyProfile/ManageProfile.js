@@ -55,7 +55,7 @@ const ManageProfile = ({
   let AnimatedHeader = new Animated.Value(0);
   const Header_Maximum_Height = 56;
   const Header_Min_Height = 56;
-
+  
   return (
     <Container style={styles.container}>
       {/* <ImageBackground
@@ -188,7 +188,7 @@ const ManageProfile = ({
                               : ``
                           }
                           fields={countryList}
-                          loadStatus={countryListloading}
+                          loadStatus={countryListloading} 
                           onSelect={(value) => {
                             onChange({ name: "phone_country_code", value });
                           }}
@@ -281,9 +281,9 @@ const ManageProfile = ({
                       fields={countryList}
                       loadStatus={countryListloading}
                       onSelect={(value) => {
-                        setCities([]);
-                        onChange({ name: "state", value: "" });
-                        onChange({ name: "city", value: "" });
+                       setCities([]);
+                       onChange({ name: "state", value: "" });
+                       onChange({ name: "city", value: "" });
                         onChange({ name: "country", value });
                       }}
                       style={styles}
@@ -374,7 +374,7 @@ const ManageProfile = ({
             </ScrollView>
           </KeyboardAvoidingView>
         </SafeAreaView>
-        </LinearGradient>
+      </LinearGradient>
       {/* </ImageBackground> */}
     </Container>
   );

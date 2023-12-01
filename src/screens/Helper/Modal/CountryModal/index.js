@@ -110,9 +110,9 @@ const CountryModal = ({
                                     setSelectedValue(null)
                                     setListItems(fields)
                                     showModalView(!modalView)
-                                }}><CloseIcon /></Pressable>
+                                }}><CloseIcon /></Pressable> 
                             </View>
-                            <View style={[styles.cardWrap]}>
+                            <View style={[styles.cardWrap]}> 
                                 {loadStatus ? <ActivityIndicator size='large' color={Colors.royal_blue} /> :
                                     <FlatList
                                         data={Object.values(listItems)}
