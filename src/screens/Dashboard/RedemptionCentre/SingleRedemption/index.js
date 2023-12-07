@@ -33,7 +33,7 @@ const SingleRedemption = ({
   reedemVoucherLoading,
   reedemVoucherData,
 }) => {
-console.log(data,'dtatadatadtata')
+//console.log(data,'dtatadatadtata')
   const { width } = useWindowDimensions();
   const contentDetails = {
     html: `<div style="color:white;word-wrap:break-word;font-size:18px;font-weight:400;">${
@@ -44,8 +44,8 @@ console.log(data,'dtatadatadtata')
   };
 
   const checkbefore = (id,status) =>{
-    console.log(id)
-    console.log(status)
+    //console.log(id)
+    //console.log(status)
     //onSubmit(id)
     if(status == false){
       Alert.alert('', 'Mohon Pastikan Kamu Sudah Memasukkan Nomor Telpon dan Alamat Yang Benar', [

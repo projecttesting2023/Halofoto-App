@@ -262,7 +262,7 @@ const ManageProfile = () => {
         if (result?.mimeType == "image/jpeg" || result?.mimeType == "image/png") {
             if (result?.name && result.name != '' && result?.size) {
                 result?.size <= MAX_FILE_UPLOAD_SIZE && setProfileImage(result?.uri)
-                console.log(result, 'result from pickDocument')
+                //console.log(result, 'result from pickDocument')
                 onChange({ name: 'profile_image', value: result })
 
             }

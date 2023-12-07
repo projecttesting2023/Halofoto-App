@@ -1,7 +1,8 @@
-import { Platform, StyleSheet } from "react-native";
+import { Platform, StyleSheet,Dimensions } from "react-native";
 import Constants from "expo-constants";
 import Colors from "../../../../global/Colors";
-import { responsiveHeight } from "react-native-responsive-dimensions";
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
+const {height,width} = Dimensions.get('window')
 
 export default StyleSheet.create({
   container: {
@@ -242,9 +243,9 @@ export default StyleSheet.create({
   },
 
   couponCardMain: {
-    width: "100%",
     display: "flex",
     height: 160,
+    width: Platform.OS == 'ios' ? responsiveWidth(94) : responsiveWidth(93),
   },
 
   couponWrapp: {
@@ -252,33 +253,33 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     height: "100%",
+    width: Platform.OS == 'ios' ? responsiveWidth(94) : responsiveWidth(93)
   },
 
   imageBox: {
-    width: 110,
-    height: 65,
-    paddingLeft: 10,
-    paddingRight: 10,
+    width: Platform.OS == 'ios' ? width * 0.2 : responsiveWidth(10),
+    height: height * 0.15,
+    flex: 0.55,
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
   },
 
   couponCardImg: {
-    width: "100%",
-    height: "100%",
+    width: Platform.OS == 'ios' ? width * 0.2 : responsiveWidth(20),
+    height: height * 0.15,
     resizeMode: "contain",
+    backgroundColor: '#ADD8E6',
+    borderRadius: 10,
+    marginLeft: Platform.OS == 'ios' ? 0 : responsiveWidth(3)
   },
 
   couponCardContent: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
+    marginLeft: 25,
+    marginTop:10,
     display: "flex",
     flexDirection: "column",
-    justifyContent: "center",
-    paddingTop: 24,
-    paddingBottom: 24,
   },
 
   couponCategory: {

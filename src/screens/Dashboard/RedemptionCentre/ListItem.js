@@ -18,6 +18,7 @@ const ListItem = ({ item, onPress }) => {
             <ImageBackground
                 resizeMode="cover"
                 style={styles.couponCardMain}
+                imageStyle={{ borderRadius: 20}}
                 source={AppSettings.coupon_background}
             >
 

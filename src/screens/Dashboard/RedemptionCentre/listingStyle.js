@@ -3,7 +3,7 @@ import Constants from "expo-constants";
 import Colors from "../../../global/Colors";
 import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 
-const {height,width} = Dimensions.get('window')
+const { height, width } = Dimensions.get('window')
 
 export default StyleSheet.create({
   container: {
@@ -82,8 +82,8 @@ export default StyleSheet.create({
     width: 21,
   },
   mainScroll: {
-    height:'100%',
-    paddingBottom:responsiveHeight(20)
+    height: '100%',
+    paddingBottom: responsiveHeight(20)
   },
   contentContainer: {
     paddingBottom: 280,
@@ -232,11 +232,11 @@ export default StyleSheet.create({
   newsCard: {
     marginLeft: 16,
     marginRight: 16,
-    // borderColor: "rgba(255, 255, 255, 0.2)",
-    // backgroundColor: "rgba(17, 78, 237, 0.1)",
-    // borderWidth: 1,
-    // borderStyle: "solid",
-    // borderRadius: 20,
+    //borderColor: "rgba(255, 255, 255, 0.2)",
+    //backgroundColor: "rgba(17, 78, 237, 0.1)",
+    //borderWidth: 1,
+    //borderStyle: "solid",
+    //borderRadius: 20,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -245,10 +245,9 @@ export default StyleSheet.create({
   },
 
   couponCardMain: {
-    width: "100%",
     display: "flex",
     height: 160,
-    width: Platform.OS =='ios'?responsiveWidth(94):responsiveWidth(94)
+    width: Platform.OS == 'ios' ? responsiveWidth(94) : responsiveWidth(93),
   },
 
   couponWrapp: {
@@ -256,12 +255,13 @@ export default StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     height: "100%",
+    width: Platform.OS == 'ios' ? responsiveWidth(94) : responsiveWidth(93)
   },
 
   imageBox: {
-    width: width*0.2,
-    height: height*0.15,
-    flex:0.55,
+    width: Platform.OS == 'ios' ? width * 0.2 : responsiveWidth(10),
+    height: height * 0.15,
+    flex: 0.55,
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
@@ -271,11 +271,12 @@ export default StyleSheet.create({
   },
 
   couponCardImg: {
-    width: width*0.25,
-    height: height*0.16,
+    width: Platform.OS == 'ios' ? width * 0.2 : responsiveWidth(20),
+    height: height * 0.15,
     resizeMode: "contain",
-    backgroundColor:'#ADD8E6',
-    borderRadius:10,
+    backgroundColor: '#ADD8E6',
+    borderRadius: 10,
+    marginLeft: Platform.OS == 'ios' ? 0 : responsiveWidth(3)
   },
 
   couponCardContent: {
@@ -296,7 +297,7 @@ export default StyleSheet.create({
 
   pointsWrapCard: {
     display: "flex",
-    flexDirection: "row",  
+    flexDirection: "row",
   },
   couponPoints: {
     fontFamily: "Montserrat-SemiBold",
@@ -394,7 +395,7 @@ export default StyleSheet.create({
     color: Colors.white,
     fontWeight: "400",
     fontFamily: "Montserrat-Regular",
-    
+
   },
   textReadMore: {
     fontSize: 16,
@@ -475,8 +476,8 @@ export default StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent:'center',
-    width:'50%',
+    justifyContent: 'center',
+    width: '50%',
     borderTopLeftRadius: 20,
     paddingTop: 10,
     paddingBottom: 10,
@@ -495,9 +496,9 @@ export default StyleSheet.create({
     justifyContent: "flex-start",
     flexDirection: "row",
     width: "100%",
-    marginLeft:20
+    marginLeft: 20
   },
-  yellowPointsWrap:{
+  yellowPointsWrap: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -520,8 +521,8 @@ export default StyleSheet.create({
     top: -6,
     zIndex: 1,
   },
-  pointsContent:{
-    width:'70%'
+  pointsContent: {
+    width: '70%'
   },
   buttonWrapp: {
     display: "flex",

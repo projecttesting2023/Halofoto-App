@@ -38,6 +38,7 @@ const ListItem = ({ item, onPress }) => {
                 style={styles.couponCardImg}
                 resizeMode="cover"
                 resizeMethod="resize"
+                imageStyle={{ borderRadius: 20}}
               />
             </View>
           )}

@@ -106,6 +106,7 @@ export default StyleSheet.create({
     fontFamily: "Montserrat-Bold",
     marginBottom:30,
     marginTop:-100,
+    textAlign:'center'
   },
   textContentSmall:{
     fontSize: 16,

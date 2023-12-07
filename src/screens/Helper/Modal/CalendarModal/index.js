@@ -19,13 +19,13 @@ const CalendarModal = ({
     const MAX_DATE = new Date()
     const [modalView, showModalView] = useState(false)
     const [selectedDate, setSelectedDate] = useState(MAX_DATE)
-    console.log(value, 'tttttttt')
+    //console.log(value, 'tttttttt')
     if (!!value) {
         const date1 = value.split('-')
         if (date1[0].length > 2) {
             value = date1[2] + '-' + date1[1] + '-' + date1[0]
         }
-        console.log(value, 'uuuuuuuu')
+        //console.log(value, 'uuuuuuuu')
     }
 
     return (

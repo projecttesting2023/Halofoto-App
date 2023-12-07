@@ -155,7 +155,7 @@ const StaticText = {
                 e_repair: `E-repair`,
                 no_product: {
                     heading: `Tidak ada produk yang didaftarkan`,
-                    content: `Lorem ipsum is simply dummy text`,
+                    content: ``,
                 }
             }
         },

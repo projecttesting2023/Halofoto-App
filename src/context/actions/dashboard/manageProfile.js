@@ -29,7 +29,7 @@ export default ({
     formData.append('phone', phone)
     formData.append('phone_code', phone_country_code?.ext_code)
     formData.append('gender', gender)
-    console.log(dob,'kjkjkjkhjhjhggthgggtghgggg')
+    //console.log(dob,'kjkjkjkhjhjhggthgggtghgggg')
     if (!dob) {
         formData.append('dob', '')
     } else {
@@ -42,7 +42,7 @@ export default ({
     formData.append('insta_id', typeof insta_id !== 'undefined' ? insta_id : '')
     formData.append('tamron_user', typeof tamron_user !== 'undefined' ? tamron_user : false)
 
-    console.log(formData)
+    //console.log(formData)
 
     if (profile_image?.uri) {
         formData.append('profile_image', { uri: profile_image?.uri, name: profile_image?.name, type: profile_image?.mimeType })
@@ -56,13 +56,13 @@ export default ({
             payload: res.data,
         })
         onSuccess(res.data)
-        console.log(res.data)
+        //console.log(res.data)
     }).catch(err => {
     
         dispatch({
             type: MY_PROFILE_UPDATE_FAIL,
             payload: err.response ? err.response.data : { error: StaticText.axios.error }
         })
-        console.log('error',err.response.data)
+        //console.log('error',err.response.data)
     })
 }

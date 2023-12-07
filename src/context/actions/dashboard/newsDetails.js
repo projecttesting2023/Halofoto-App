@@ -26,8 +26,8 @@ export default (news_slug) => dispatch => {
             payload: res.data,
 
         })
-        console.log(res.data, 'news details data coming from api')
-        console.log(res.data.news.video_link_1, 'first video link ')
+        //console.log(res.data, 'news details data coming from api')
+        //console.log(res.data.news.video_link_1, 'first video link ')
     }).catch(err => {
 
         dispatch({

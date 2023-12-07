@@ -5,6 +5,7 @@ import styles from "./style";
 import AppSettings from "../../../global/AppSettings";
 
 const ProductCardHorizental = ({ item, onPress }) => {
+  //console.log(item?.product_images[0]?.path)
   return (
     <Pressable
       onPress={() =>
@@ -18,7 +19,7 @@ const ProductCardHorizental = ({ item, onPress }) => {
         <View style={styles.productCard}>
           <View style={styles.categoryTagWrap}>
             <Text style={styles.categoryTag}>
-              {StaticText.screen.product_catelog.content.deal_list_heading}
+             {StaticText.screen.product_catelog.content.deal_list_heading}
             </Text>
           </View>
           {item?.product_images && item?.product_images?.length > 0 && (
