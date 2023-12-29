@@ -1,56 +1,56 @@
 {
   "project_info": {
-    "project_number": "988154087943",
-    "project_id": "halofotolive",
-    "storage_bucket": "halofotolive.appspot.com"
+    "project_number": "xxxx",
+    "project_id": "xxx",
+    "storage_bucket": "xxxx"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:988154087943:android:c603c911e6f6d667ed38a2",
+        "mobilesdk_app_id": "xxxx",
         "android_client_info": {
-          "package_name": "com.halofoto.halofotoLive"
+          "package_name": "xxxx"
         }
       },
       "oauth_client": [
         {
-          "client_id": "988154087943-6iae0ntv8usb21g826i60jch7f44tubh.apps.googleusercontent.com",
+          "client_id": "xxxx",
           "client_type": 1,
           "android_info": {
             "package_name": "com.halofoto.halofotoLive",
-            "certificate_hash": "91aef48489fe02278ffd50687c15135a042e482f"
+            "certificate_hash": "xxx"
           }
         },
         {
-          "client_id": "988154087943-6tq7vp54lf1kks9adi42i6mmk64sl6fs.apps.googleusercontent.com",
+          "client_id": "xxxx",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.halofoto.halofotoLive",
-            "certificate_hash": "e72cf1116c489610d1bc0f8254eacc642e2290e9"
+            "package_name": "xxxx",
+            "certificate_hash": "xxxx"
           }
         },
         {
-          "client_id": "988154087943-eeun3vf285cetqb594ksj6sqm1dai0r2.apps.googleusercontent.com",
+          "client_id": "xxxx",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDG5zyJrzENneybkfk4TUwdvIw_0SyJMuM"
+          "current_key": "xxxx"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "988154087943-4ca5gjocc16j2n61m99vkcttcjhhlmo1.apps.googleusercontent.com",
+              "client_id": "xxxx",
               "client_type": 3
             },
             {
-              "client_id": "988154087943-021kt591c3mjjrv64a9fd0rtba95qt98.apps.googleusercontent.com",
+              "client_id": "xxxx",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.halofoto.halofotoLive"
+                "bundle_id": "xxxx"
               }
             }
           ]
